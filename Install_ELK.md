@@ -1,166 +1,143 @@
 ﻿
-CentOS7 에 ELK Stack을 구축해보기(CentOS같은 경우는 네이버 클라우드의 서버 상품을 이용했습니다)
+Install ELK Stack on CentOS 7
 
 
-ElasticSearch: Apache 오픈소스로 분산형 검색 시스템에 DB의 역할까지 가능
+ElasticSearch: Apache OpenSource, Restful API, support distributed search
 
-Logstash: 여러 가지 로그 파일, 또는 JSON 포멧의 파일을 ElasticSearch로 전송
+Logstash: send log files, JSON format file to Elasticsearch
 
-Kibana: ElasticSearch에 저장된 데이터를 사용자에게 시각화하여 제공
+Kibana: visualize the Elasticsearch data
 
-Filebeat: 로그를 저장하는 파일을 지속적으로 보며, 로그가 생성될 경우, Logstash로 전송
-
-
-즉, Filebeat를 통해 로그를 수집하고, 이를 Logstash를 통해 JSON 형태로 변환한 후, ElasticSearch를 통해 로그를 검색 및 분석, Kibana를 통해 이를 시각화한다.
+Filebeat: send the changed log file to Logstash
 
 
-
-ElasticSearch의 경우, java 기반이기 때문에 java가 설치되어 있어야 한다. 아래 명령어를 통해 java 설치
-
-
-﻿$sudo yum -y install java-1.8.0-openjdk java-1.8.0-openjdk-devel
-
-ElasticSearch 설치하기
-
-/etc/yum.repos.d/ 에 elasticsearch.repo 추가하기
+So, Collect log data from Filebeat, Filebeat send it to Logstash, Logstash converts it to JSON format and send to ElasticSearch. Kibana visualize it.
 
 
-﻿vi /etc/yum.repos.d/elasticsearch.repo﻿
+### You have to install Java to use ElasticSearch.
 
 
-[elasticsearch-7.x]
+## 1. Install Java
+
+<pre><code>$sudo yum -y install java-1.8.0-openjdk java-1.8.0-openjdk-devel</code></pre>
+
+## 2. Install ElasticSearch
+
+<pre><code>vi /etc/yum.repos.d/elasticsearch.repo</code></pre>
+
+<pre><code>[elasticsearch-7.x]
 name=Elasticsearch repository for 7.x packages
 baseurl=https://artifacts.elastic.co/packages/7.x/yum
 gpgcheck=1
 gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
 enabled=1
 autorefresh=1
-type=rpm-md
-
-만약 Elasticsearch 6버전을 다운받고 싶은 경우, 7을 6으로 변경하면 된다.
+type=rpm-md</code></pre>
 
 
-sudo yum -y install elasticsearch
+If you want to download ElasticSearch version 6,
 
-Logstash 설치하기
+just change 7 to 6
 
-/etc/yum.repos.d/logstash.repo 추가하기
-
-
-vi /etc/yum.repos.d/logstash.repo
+<pre><code>sudo yum -y install elasticsearch</code></pre>
 
 
-[logstash-7.x]
+## 3.Install Logstash 
+
+<pre><code>vi /etc/yum.repos.d/logstash.repo</code></pre>
+
+<pre><code>[logstash-7.x]
 name=Elastic repository for 7.x packages
 baseurl=https://artifacts.elastic.co/packages/7.x/yum
 gpgcheck=1
 gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
 enabled=1
 autorefresh=1
-type=rpm-md
+type=rpm-md</code></pre>
+
+<pre><code>sudo yum -y install logstash</code></pre>
 
 
-sudo yum -y install logstash
+## 4. Install Kibana
 
+<pre><code>vi /etc/yum.repos.d/kibana.repo</code></pre>
 
-Kibana 설치하기
-
-/etc/yum.repos.d/kibana.repo 추가하기
-
-
-vi /etc/yum.repos.d/kibana.repo
-
-
-[kibana-7.x]
+<pre><code>[kibana-7.x]
 name=Kibana repository for 7.x packages
 baseurl=https://artifacts.elastic.co/packages/7.x/yum
 gpgcheck=1
 gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
 enabled=1
 autorefresh=1
-type=rpm-md
+type=rpm-md</code></pre>
 
 
-sudo yum -y install kibana
-
-Kibana를 설치하였으면 연결할 Elasticsearch를 설정해 주어야 한다.
+<pre><code>sudo yum -y install kibana</code></pre>
 
 
-sudo vi /etc/kibana//kibana.yml
-
-elasticsearch.url: "http://127.0.0.1:9200" 으로 변경
+## 5. Install Filebeat 
 
 
-Filebeat 설치
-
-/etc/yum.repos.d/elastic.repo 추가
+<pre><code>vi /etc/yum.repos.d/elastic.repo</code></pre>
 
 
-vi /etc/yum.repos.d/elastic.repo
-
-
-[elastic-7.x] 
+<pre><code>[elastic-7.x] 
 name=Elastic repository for 7.x packages 
 baseurl=https://artifacts.elastic.co/packages/7.x/yum 
 gpgcheck=1 
 gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch 
 enabled=1 
 autorefresh=1 
-type=rpm-md
+type=rpm-md</code></pre>
 
 
-sudo yum -y install filebeat
+<pre><code>sudo yum -y install filebeat
 
-filebeat와 logstash 연결은 추후 추가하도록 하겠습니다.
-
-
-
-Kibana에 접속하기 위해서는 공인 IP를 할당받아야 합니다. 공인 IP를 할당받으면 외부에서 접근할 수 있도록 Elasticsearch를 수정해야 합니다.
+Upload filebeat + logstash later....</code></pre>
 
 
-hostname -i 
+If you don't have any UI to see the Kibana(like server supports only console), you have to have a Public IP to access Kibana.
 
-위의 명령어를 실행하여 얻은 사설 IP 주소를 복사합니다.
+Also, you have to change Elasticsearch config file to allow access from other networks.
 
+<pre><code>hostname -i</code></pre>
 
-sudo vi /etc/elasticsearch/elasticsearch.yml
-
-
--------------------network---------------------에 있는
-network.host: 
-해당 부분에 위에서 얻은 사설 IP 주소를 적어줍니다.
-
--------------------Discovy----------------------에 있는
-discovery.seed_hosts: [" "]
-cluster.initial_master_nodes: [" "]
-부분 역시 위에서 얻은 사설 IP 주소를 적어줍니다.
+copy the private IP
 
 
-sudo systemctl start elasticsearch
-
-Elasticsearch를 실행하고, 주소창에 공인IP주소:9200을 적고 실행하면
+<pre><code>sudo vi /etc/elasticsearch/elasticsearch.yml</code></pre>
 
 
-image.png
-대표사진 삭제
+
+<pre><code>-------------------network---------------------
+network.host: 0.0.0.0
+
+-------------------Discovy----------------------
+discovery.seed_hosts: [" paste the private IP "]
+cluster.initial_master_nodes: [" paste the private IP "]</code></pre>
 
 
-다음과 같은 화면을 볼 수 있다면 성공적으로 Elasticsearch가 실행되었습니다.
+
+<pre><code>sudo systemctl start elasticsearch</code></pre>
 
 
-이제 Kibana의 설정을 변경하여 보겠습니다.
+If you can get some messages from "curl localhost:9200", Elasticsearch is operating successfully.
+
+Let's change the Kibana config file.
 
 
-sudo vi /etc/kibana/kibana.yml
+<pre><code>sudo vi /etc/kibana/kibana.yml</code></pre>
 
 
-server.host: "0.0.0.0"
-elasticsearch.url: "위에서 얻은 사설 IP:9200"
+<pre><code>server.host: "0.0.0.0"
+elasticsearch.url: "http://localhost:9200"</code></pre>
 
 
-sudo systemctl start kibana
+<pre><code>sudo systemctl start kibana</code></pre>
 
-실행 후, 주소창에 공인IP:5601을 적고 실행 시
+Now, go to your web page and search "Your public IP:5601"
 
+you can face this image.
 
-﻿
+<img src="https://postfiles.pstatic.net/MjAyMDAyMDhfMTgx/MDAxNTgxMTUxNzYxMTc2.diMLe8A5nLWgXm7sqc2VoSJOAfu7bq_zB-3DxiKtFvUg.e662bNhioSub0j0BxkvtGbaR8B2rrOaT_NajkQhbgeUg.PNG.yhb77888/image.png?type=w773">
+
