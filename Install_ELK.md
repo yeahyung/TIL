@@ -91,9 +91,7 @@ autorefresh=1
 type=rpm-md</code></pre>
 
 
-<pre><code>sudo yum -y install filebeat
-
-Upload filebeat + logstash later....</code></pre>
+<pre><code>sudo yum -y install filebeat</code></pre>
 
 
 If you don't have any UI to see the Kibana(like server supports only console), you have to have a Public IP to access Kibana.
@@ -141,3 +139,34 @@ you can face this image.
 
 <img src="https://postfiles.pstatic.net/MjAyMDAyMDhfMTgx/MDAxNTgxMTUxNzYxMTc2.diMLe8A5nLWgXm7sqc2VoSJOAfu7bq_zB-3DxiKtFvUg.e662bNhioSub0j0BxkvtGbaR8B2rrOaT_NajkQhbgeUg.PNG.yhb77888/image.png?type=w773">
 
+Now, you have to edit the filebeat, logstash configuration.
+
+<pre><code>sudo vi /etc/filebeat/filebeat.yml</code></pre>
+
+<pre><code>#========================= filebeat inputs ============================
+- type: log 
+enabled: true
+  paths:
+    - /var/log/*.log
+all the log files included in the path will be collected by filebeat</code></pre>
+
+<pre><code>sudo vi /etc/logstash/conf.d/filebeat.conf</code></pre>
+
+<pre><code>input{
+ beats{
+  port => 5044
+  host => "0.0.0.0"
+ }
+}
+output {
+ elasticsearch{
+  hosts => ["http://127.0.0.1:9200"]
+  index => "%{[@metadata][beat]}-%{+YYYY.MM.dd}"
+   document_type => "%{[@metadata][type]}"
+ }
+}</code></pre>
+
+<pre><code>sudo systemctl start logstash
+sudo systemctl start filebeat</code></pre>
+
+<img src="https://postfiles.pstatic.net/MjAyMDAyMDlfNTgg/MDAxNTgxMjQwNTAwNjA5.dnZZvsiDEC135fIxnkzUWaithkAYyh7S9R2bis8M-Z8g.xC9JzfZ-K2szMM0XOUXIco9DAzRqKlVJalATqjerQN0g.PNG.yhb77888/image.png?type=w773">
