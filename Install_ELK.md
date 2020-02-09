@@ -169,4 +169,6 @@ output {
 <pre><code>sudo systemctl start logstash
 sudo systemctl start filebeat</code></pre>
 
+Now, go to Kibana web page, you can see Elasticsearch index is uploaded, and you can check the log data.
+
 <img src="https://postfiles.pstatic.net/MjAyMDAyMDlfNTgg/MDAxNTgxMjQwNTAwNjA5.dnZZvsiDEC135fIxnkzUWaithkAYyh7S9R2bis8M-Z8g.xC9JzfZ-K2szMM0XOUXIco9DAzRqKlVJalATqjerQN0g.PNG.yhb77888/image.png?type=w773">
