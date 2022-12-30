@@ -1,0 +1,1525 @@
+﻿{
+  "paragraphs": [
+    {
+      "text": "%spark\nspark.sql(\"show tables\").show()",
+      "user": "yea",
+      "dateUpdated": "2022-12-29T16:03:50+0900",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+---------+-----------+\n|database|tableName|isTemporary|\n+--------+---------+-----------+\n| default| my_table|      false|\n+--------+---------+-----------+\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672286775808_75281315",
+      "id": "paragraph_1672286775808_75281315",
+      "dateCreated": "2022-12-29T13:06:15+0900",
+      "dateStarted": "2022-12-29T13:10:37+0900",
+      "dateFinished": "2022-12-29T13:10:37+0900",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:465"
+    },
+    {
+      "text": "%spark\nval df = spark.sql(\"select * from my_table\")\ndf.show()",
+      "user": "yea",
+      "dateUpdated": "2022-12-29T13:10:40+0900",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "java.io.IOException: Not a file: hdfs://catalog-test/warehouse/tablespace/managed/hive/my_table/delta_0000001_0000001_0000\n  at org.apache.hadoop.mapred.FileInputFormat.getSplits(FileInputFormat.java:337)\n  at org.apache.spark.rdd.HadoopRDD.getPartitions(HadoopRDD.scala:204)\n  at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)\n  at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)\n  at scala.Option.getOrElse(Option.scala:121)\n  at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)\n  at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:49)\n  at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)\n  at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)\n  at scala.Option.getOrElse(Option.scala:121)\n  at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)\n  at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:49)\n  at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)\n  at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)\n  at scala.Option.getOrElse(Option.scala:121)\n  at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)\n  at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:49)\n  at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)\n  at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)\n  at scala.Option.getOrElse(Option.scala:121)\n  at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)\n  at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:49)\n  at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)\n  at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)\n  at scala.Option.getOrElse(Option.scala:121)\n  at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)\n  at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:49)\n  at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)\n  at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)\n  at scala.Option.getOrElse(Option.scala:121)\n  at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)\n  at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:49)\n  at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:273)\n  at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:269)\n  at scala.Option.getOrElse(Option.scala:121)\n  at org.apache.spark.rdd.RDD.partitions(RDD.scala:269)\n  at org.apache.spark.sql.execution.SparkPlan.executeTake(SparkPlan.scala:347)\n  at org.apache.spark.sql.execution.CollectLimitExec.executeCollect(limit.scala:38)\n  at org.apache.spark.sql.Dataset.org$apache$spark$sql$Dataset$$collectFromPlan(Dataset.scala:3388)\n  at org.apache.spark.sql.Dataset$$anonfun$head$1.apply(Dataset.scala:2550)\n  at org.apache.spark.sql.Dataset$$anonfun$head$1.apply(Dataset.scala:2550)\n  at org.apache.spark.sql.Dataset$$anonfun$53.apply(Dataset.scala:3369)\n  at org.apache.spark.sql.execution.SQLExecution$$anonfun$withNewExecutionId$1.apply(SQLExecution.scala:80)\n  at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:127)\n  at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:75)\n  at org.apache.spark.sql.Dataset.org$apache$spark$sql$Dataset$$withAction(Dataset.scala:3368)\n  at org.apache.spark.sql.Dataset.head(Dataset.scala:2550)\n  at org.apache.spark.sql.Dataset.take(Dataset.scala:2764)\n  at org.apache.spark.sql.Dataset.getRows(Dataset.scala:254)\n  at org.apache.spark.sql.Dataset.showString(Dataset.scala:291)\n  at org.apache.spark.sql.Dataset.show(Dataset.scala:751)\n  at org.apache.spark.sql.Dataset.show(Dataset.scala:710)\n  at org.apache.spark.sql.Dataset.show(Dataset.scala:719)\n  ... 45 elided\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672286781690_1664388285",
+      "id": "paragraph_1672286781690_1664388285",
+      "dateCreated": "2022-12-29T13:06:21+0900",
+      "dateStarted": "2022-12-29T13:10:40+0900",
+      "dateFinished": "2022-12-29T13:10:41+0900",
+      "status": "ERROR",
+      "$$hashKey": "object:466"
+    },
+    {
+      "text": "%spark\nspark.sql(\"select * from movies\").show()",
+      "user": "yea",
+      "dateUpdated": "2022-12-29T15:10:26+0900",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+--------------------+--------------------+\n|movieid|               title|              genres|\n+-------+--------------------+--------------------+\n|   null|               title|              genres|\n|      1|    Toy Story (1995)|Adventure|Animati...|\n|      2|      Jumanji (1995)|Adventure|Childre...|\n|      3|Grumpier Old Men ...|      Comedy|Romance|\n|      4|Waiting to Exhale...|Comedy|Drama|Romance|\n|      5|Father of the Bri...|              Comedy|\n|      6|         Heat (1995)|Action|Crime|Thri...|\n|      7|      Sabrina (1995)|      Comedy|Romance|\n|      8| Tom and Huck (1995)|  Adventure|Children|\n|      9| Sudden Death (1995)|              Action|\n|     10|    GoldenEye (1995)|Action|Adventure|...|\n|     11| \"American President|         The (1995)\"|\n|     12|Dracula: Dead and...|       Comedy|Horror|\n|     13|        Balto (1995)|Adventure|Animati...|\n|     14|        Nixon (1995)|               Drama|\n|     15|Cutthroat Island ...|Action|Adventure|...|\n|     16|       Casino (1995)|         Crime|Drama|\n|     17|Sense and Sensibi...|       Drama|Romance|\n|     18|   Four Rooms (1995)|              Comedy|\n|     19|Ace Ventura: When...|              Comedy|\n+-------+--------------------+--------------------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://e-001-catalog-test-25rk-hd:4041/jobs/job?id=0",
+              "$$hashKey": "object:1187"
+            }
+          ],
+          "interpreterSettingId": "spark2"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672286795177_465570050",
+      "id": "paragraph_1672286795177_465570050",
+      "dateCreated": "2022-12-29T13:06:35+0900",
+      "dateStarted": "2022-12-29T15:10:26+0900",
+      "dateFinished": "2022-12-29T15:10:33+0900",
+      "status": "FINISHED",
+      "$$hashKey": "object:467"
+    },
+    {
+      "text": "%spark\nval df = spark.table(\"movies\")\ndf.show()",
+      "user": "yea",
+      "dateUpdated": "2022-12-29T15:15:35+0900",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+--------------------+--------------------+\n|movieid|               title|              genres|\n+-------+--------------------+--------------------+\n|   null|               title|              genres|\n|      1|    Toy Story (1995)|Adventure|Animati...|\n|      2|      Jumanji (1995)|Adventure|Childre...|\n|      3|Grumpier Old Men ...|      Comedy|Romance|\n|      4|Waiting to Exhale...|Comedy|Drama|Romance|\n|      5|Father of the Bri...|              Comedy|\n|      6|         Heat (1995)|Action|Crime|Thri...|\n|      7|      Sabrina (1995)|      Comedy|Romance|\n|      8| Tom and Huck (1995)|  Adventure|Children|\n|      9| Sudden Death (1995)|              Action|\n|     10|    GoldenEye (1995)|Action|Adventure|...|\n|     11| \"American President|         The (1995)\"|\n|     12|Dracula: Dead and...|       Comedy|Horror|\n|     13|        Balto (1995)|Adventure|Animati...|\n|     14|        Nixon (1995)|               Drama|\n|     15|Cutthroat Island ...|Action|Adventure|...|\n|     16|       Casino (1995)|         Crime|Drama|\n|     17|Sense and Sensibi...|       Drama|Romance|\n|     18|   Four Rooms (1995)|              Comedy|\n|     19|Ace Ventura: When...|              Comedy|\n+-------+--------------------+--------------------+\nonly showing top 20 rows\n\n\u001b[1m\u001b[34mdf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [movieid: bigint, title: string ... 1 more field]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://e-001-catalog-test-25rk-hd:4041/jobs/job?id=3",
+              "$$hashKey": "object:1233"
+            }
+          ],
+          "interpreterSettingId": "spark2"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672294226627_1737437455",
+      "id": "paragraph_1672294226627_1737437455",
+      "dateCreated": "2022-12-29T15:10:26+0900",
+      "dateStarted": "2022-12-29T15:15:35+0900",
+      "dateFinished": "2022-12-29T15:15:36+0900",
+      "status": "FINISHED",
+      "$$hashKey": "object:468"
+    },
+    {
+      "text": "%sql\nshow tables;\ndescribe table movies;",
+      "user": "yea",
+      "dateUpdated": "2022-12-29T15:43:04+0900",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "database": "string",
+                      "tableName": "string",
+                      "isTemporary": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          },
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "col_name": "string",
+                      "data_type": "string",
+                      "comment": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "database\ttableName\tisTemporary\ndefault\tmovies\tfalse\ndefault\tmy\tfalse\ndefault\tmy_table\tfalse\n"
+          },
+          {
+            "type": "TABLE",
+            "data": "col_name\tdata_type\tcomment\nmovieid\tbigint\tnull\ntitle\tstring\tnull\ngenres\tstring\tnull\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672294351563_1630064905",
+      "id": "paragraph_1672294351563_1630064905",
+      "dateCreated": "2022-12-29T15:12:31+0900",
+      "dateStarted": "2022-12-29T15:26:52+0900",
+      "dateFinished": "2022-12-29T15:26:53+0900",
+      "status": "FINISHED",
+      "$$hashKey": "object:469"
+    },
+    {
+      "text": "%spark\nimport spark.implicits._\nimport org.apache.spark.sql.types.StructType\nimport org.apache.spark.sql.catalyst.ScalaReflection\n\ncase class Movie(movieId: Int, title: String, genres: String)\nval movies_schema = ScalaReflection.schemaFor[Movie].dataType.asInstanceOf[StructType]  // create schema from case class",
+      "user": "yea",
+      "dateUpdated": "2022-12-29T17:17:32+0900",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import spark.implicits._\nimport org.apache.spark.sql.types.StructType\nimport org.apache.spark.sql.catalyst.ScalaReflection\ndefined class Movie\n\u001b[1m\u001b[34mmovies_schema\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.types.StructType\u001b[0m = StructType(StructField(movieId,IntegerType,false), StructField(title,StringType,true), StructField(genres,StringType,true))\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672295190254_627708533",
+      "id": "paragraph_1672295190254_627708533",
+      "dateCreated": "2022-12-29T15:26:30+0900",
+      "dateStarted": "2022-12-29T15:44:48+0900",
+      "dateFinished": "2022-12-29T15:44:50+0900",
+      "status": "FINISHED",
+      "$$hashKey": "object:470"
+    },
+    {
+      "text": "%spark\nval movie_df_temp = spark.read\n        .option(\"header\", \"true\")\n        .schema(movies_schema)\n        .csv(\"hdfs://catalog-test/user/root/movie.csv\")",
+      "user": "yea",
+      "dateUpdated": "2022-12-29T15:45:26+0900",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mmovie_df_temp\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [movieId: int, title: string ... 1 more field]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672296288589_1188042106",
+      "id": "paragraph_1672296288589_1188042106",
+      "dateCreated": "2022-12-29T15:44:48+0900",
+      "dateStarted": "2022-12-29T15:45:26+0900",
+      "dateFinished": "2022-12-29T15:45:26+0900",
+      "status": "FINISHED",
+      "$$hashKey": "object:471"
+    },
+    {
+      "text": "%spark\nimport org.apache.spark.sql.functions._\nimport org.apache.spark.sql.types.IntegerType\n\nval movie_df = movie_df_temp\n    .select($\"movieId\", $\"title\", explode(split($\"genres\", \"\\\\|\")).as(\"genre\"))\n    .withColumn(\"releasedYear\", regexp_extract($\"title\", \"\\\\((\\\\d{4})\\\\)\", 1))\n    .withColumn(\"releasedYear\", $\"releasedYear\".cast(IntegerType))",
+      "user": "yea",
+      "dateUpdated": "2022-12-29T15:51:36+0900",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.functions._\nimport org.apache.spark.sql.types.IntegerType\n\u001b[1m\u001b[34mmovie_df\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [movieId: int, title: string ... 2 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672296318586_892995627",
+      "id": "paragraph_1672296318586_892995627",
+      "dateCreated": "2022-12-29T15:45:18+0900",
+      "dateStarted": "2022-12-29T15:51:36+0900",
+      "dateFinished": "2022-12-29T15:51:37+0900",
+      "status": "FINISHED",
+      "$$hashKey": "object:472"
+    },
+    {
+      "text": "%spark\nmovie_df.createOrReplaceTempView(\"movie\")\nspark.sql(\"show tables\").show()\nspark.sql(\"desc movie\").show()\nspark.sql(\"select * from movie limit 3\").show()",
+      "user": "yea",
+      "dateUpdated": "2022-12-29T15:51:39+0900",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+--------+---------+-----------+\n|database|tableName|isTemporary|\n+--------+---------+-----------+\n| default|   movies|      false|\n| default|       my|      false|\n| default| my_table|      false|\n|        |    movie|       true|\n+--------+---------+-----------+\n\n+------------+---------+-------+\n|    col_name|data_type|comment|\n+------------+---------+-------+\n|     movieId|      int|   null|\n|       title|   string|   null|\n|       genre|   string|   null|\n|releasedYear|      int|   null|\n+------------+---------+-------+\n\n+-------+----------------+---------+------------+\n|movieId|           title|    genre|releasedYear|\n+-------+----------------+---------+------------+\n|      1|Toy Story (1995)|Adventure|        1995|\n|      1|Toy Story (1995)|Animation|        1995|\n|      1|Toy Story (1995)| Children|        1995|\n+-------+----------------+---------+------------+\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://e-001-catalog-test-25rk-hd:4041/jobs/job?id=6",
+              "$$hashKey": "object:1439"
+            }
+          ],
+          "interpreterSettingId": "spark2"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672296343635_490821187",
+      "id": "paragraph_1672296343635_490821187",
+      "dateCreated": "2022-12-29T15:45:43+0900",
+      "dateStarted": "2022-12-29T15:51:39+0900",
+      "dateFinished": "2022-12-29T15:51:39+0900",
+      "status": "FINISHED",
+      "$$hashKey": "object:473"
+    },
+    {
+      "text": "%spark\n\n// rating.csv\nimport spark.implicits._\nimport org.apache.spark.sql.types.StructType\nimport org.apache.spark.sql.catalyst.ScalaReflection\nimport java.sql.Timestamp\nimport org.apache.spark.sql.functions._\n\ncase class Rating(userId: Int, movieId: Int, rating: Double, timestamp: Timestamp)\nval rating_schema = ScalaReflection.schemaFor[Rating].dataType.asInstanceOf[StructType]\nval rating_df_temp = spark.read\n    .option(\"header\", \"true\")\n    .schema(rating_schema)\n    .csv(\"hdfs://catalog-test/user/root/rating.csv\")\n\nval rating_df_filtered = rating_df_temp.groupBy($\"movieId\")\n    .agg(count(\"*\").as(\"count\")).filter($\"count\" > 10) // Filter out recored where only few people rate the movie\nval rating_df = rating_df_temp.join(rating_df_filtered, rating_df_temp(\"movieId\") === rating_df_filtered(\"movieId\"))\n    .select($\"userId\", rating_df_temp(\"movieId\"), $\"rating\", year($\"timestamp\").as(\"year\"), month($\"timestamp\").as(\"month\"))\n    \nrating_df.createOrReplaceTempView(\"rating\")\nspark.sql(\"select * from rating limit 3\").show()",
+      "user": "yea",
+      "dateUpdated": "2022-12-29T16:01:31+0900",
+      "progress": 100,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+------+-------+------+----+-----+\n|userId|movieId|rating|year|month|\n+------+-------+------+----+-----+\n|   165|    243|   1.0|1996|    6|\n|   518|    243|   3.0|1996|    8|\n|   741|    243|   0.5|2007|   10|\n+------+-------+------+----+-----+\n\nimport spark.implicits._\nimport org.apache.spark.sql.types.StructType\nimport org.apache.spark.sql.catalyst.ScalaReflection\nimport java.sql.Timestamp\nimport org.apache.spark.sql.functions._\ndefined class Rating\n\u001b[1m\u001b[34mrating_schema\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.types.StructType\u001b[0m = StructType(StructField(userId,IntegerType,false), StructField(movieId,IntegerType,false), StructField(rating,DoubleType,false), StructField(timestamp,TimestampType,true))\n\u001b[1m\u001b[34mrating_df_temp\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [userId: int, movieId: int ... 2 more fields]\n\u001b[1m\u001b[34mrating_df_filtered\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.Dataset[org.apache.spark.sql.Row]\u001b[0m = [movieId: int, count: bigint]\n\u001b[1m\u001b[34mrating_df\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [userId: in..."
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://e-001-catalog-test-25rk-hd:4041/jobs/job?id=8",
+              "$$hashKey": "object:1485"
+            }
+          ],
+          "interpreterSettingId": "spark2"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672296562090_1756501857",
+      "id": "paragraph_1672296562090_1756501857",
+      "dateCreated": "2022-12-29T15:49:22+0900",
+      "dateStarted": "2022-12-29T16:01:31+0900",
+      "dateFinished": "2022-12-29T16:03:06+0900",
+      "status": "FINISHED",
+      "$$hashKey": "object:474"
+    },
+    {
+      "text": "%spark\n// Find out top rated movies\nspark.sql(\"select movieId, avg(rating) as avgRating from rating group by movieId order by avgRating desc limit 5\").show()",
+      "user": "yea",
+      "dateUpdated": "2022-12-29T17:18:28+0900",
+      "progress": 97,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+-----------------+\n|movieId|        avgRating|\n+-------+-----------------+\n| 113315|              4.5|\n|    318|4.446990499637029|\n|    858|4.364732196832306|\n|     50|4.334372207803259|\n|    527|4.310175010988133|\n+-------+-----------------+\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://e-001-catalog-test-25rk-hd:4041/jobs/job?id=9",
+              "$$hashKey": "object:1531"
+            }
+          ],
+          "interpreterSettingId": "spark2"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672296978972_869642227",
+      "id": "paragraph_1672296978972_869642227",
+      "dateCreated": "2022-12-29T15:56:18+0900",
+      "dateStarted": "2022-12-29T17:18:28+0900",
+      "dateFinished": "2022-12-29T17:19:07+0900",
+      "status": "FINISHED",
+      "$$hashKey": "object:475"
+    },
+    {
+      "text": "%spark\n// Find out top rated genres\nspark.sql(\"select m.genre, avg(r.rating) as avgRating from movie m join rating r on m.movieId = r.movieId group by m.genre order by avgRating desc limit 5\").show()",
+      "user": "yea",
+      "dateUpdated": "2022-12-29T17:21:05+0900",
+      "progress": 84,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+------------------+------------------+\n|             genre|         avgRating|\n+------------------+------------------+\n|         Film-Noir|3.9675141046824307|\n|               War| 3.810533213860618|\n|(no genres listed)| 3.783333333333333|\n|       Documentary| 3.747184640080052|\n|             Drama| 3.675430316820671|\n+------------------+------------------+\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://e-001-catalog-test-25rk-hd:4041/jobs/job?id=10",
+              "$$hashKey": "object:1577"
+            },
+            {
+              "jobUrl": "http://e-001-catalog-test-25rk-hd:4041/jobs/job?id=11",
+              "$$hashKey": "object:1578"
+            }
+          ],
+          "interpreterSettingId": "spark2"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672301908917_1894135124",
+      "id": "paragraph_1672301908917_1894135124",
+      "dateCreated": "2022-12-29T17:18:28+0900",
+      "dateStarted": "2022-12-29T17:21:05+0900",
+      "dateFinished": "2022-12-29T17:21:48+0900",
+      "status": "FINISHED",
+      "$$hashKey": "object:476"
+    },
+    {
+      "text": "%spark\n// Create a new dataframe by joining\n// Use Seq in order to avoid having duplicated column\nval movie_rating_df = movie_df.join(rating_df, Seq(\"movieId\"), \"inner\")\nmovie_rating_df.show()",
+      "user": "yea",
+      "dateUpdated": "2022-12-29T17:22:37+0900",
+      "progress": 84,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+--------------------+-----+------------+------+------+----+-----+\n|movieId|               title|genre|releasedYear|userId|rating|year|month|\n+-------+--------------------+-----+------------+------+------+----+-----+\n|    148|Awfully Big Adven...|Drama|        1995|   490|   3.0|1997|    1|\n|    148|Awfully Big Adven...|Drama|        1995|   603|   2.0|1996|    7|\n|    148|Awfully Big Adven...|Drama|        1995|   741|   4.5|2007|   11|\n|    148|Awfully Big Adven...|Drama|        1995|   903|   3.0|1998|    8|\n|    148|Awfully Big Adven...|Drama|        1995|  1259|   5.0|1996|    4|\n|    148|Awfully Big Adven...|Drama|        1995|  1716|   2.0|2011|    7|\n|    148|Awfully Big Adven...|Drama|        1995|  1931|   2.0|1996|   11|\n|    148|Awfully Big Adven...|Drama|        1995|  2671|   3.0|1996|    7|\n|    148|Awfully Big Adven...|Drama|        1995|  3335|   5.0|2002|    6|\n|    148|Awfully Big Adven...|Drama|        1995|  3433|   2.0|1999|   10|\n|    148|Awfully Big Adven...|Drama|        1995|  3439|   1.0|1996|    5|\n|    148|Awfully Big Adven...|Drama|        1995|  3576|   2.0|2003|    8|\n|    148|Awfully Big Adven...|Drama|        1995|  3673|   2.0|1998|    7|\n|    148|Awfully Big Adven...|Drama|        1995|  3990|   4.0|2015|    2|\n|    148|Awfully Big Adven...|Drama|        1995|  4914|   2.0|2000|   12|\n|    148|Awfully Big Adven...|Drama|        1995|  4948|   3.0|1996|    5|\n|    148|Awfully Big Adven...|Drama|        1995|  5186|   2.0|2000|    7|\n|    148|Awfully Big Adven...|Drama|        1995|  5585|   3.0|1996|    6|\n|    148|Awfully Big Adven...|Drama|        1995|  5814|   3.0|1997|    3|\n|    148|Awfully Big Adven...|Drama|        1995|  5938|   4.0|1999|   12|\n+-------+--------------------+-----+------------+------+------+----+-----+\nonly showing top 20 rows\n\n\u001b[1m\u001b[34mmovie_rating_df\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [movieId: int, title: string ... 6 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://e-001-catalog-test-25rk-hd:4041/jobs/job?id=12",
+              "$$hashKey": "object:1628"
+            },
+            {
+              "jobUrl": "http://e-001-catalog-test-25rk-hd:4041/jobs/job?id=13",
+              "$$hashKey": "object:1629"
+            }
+          ],
+          "interpreterSettingId": "spark2"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672301961101_176203779",
+      "id": "paragraph_1672301961101_176203779",
+      "dateCreated": "2022-12-29T17:19:21+0900",
+      "dateStarted": "2022-12-29T17:22:37+0900",
+      "dateFinished": "2022-12-29T17:24:02+0900",
+      "status": "FINISHED",
+      "$$hashKey": "object:477"
+    },
+    {
+      "text": "%spark\n// 새로운 dataframe을 parquet으로 저장(year, month partition 지정)\nimport org.apache.spark.sql.SaveMode\nmovie_rating_df.repartition($\"year\", $\"month\")\n    .write.partitionBy(\"year\", \"month\")\n    .mode(SaveMode.Append)\n    .parquet(\"hdfs://catalog-test/user/root/movie_rating\")\n",
+      "user": "yea",
+      "dateUpdated": "2022-12-29T17:33:56+0900",
+      "progress": 95,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.SaveMode\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://e-001-catalog-test-25rk-hd:4041/jobs/job?id=14",
+              "$$hashKey": "object:1679"
+            },
+            {
+              "jobUrl": "http://e-001-catalog-test-25rk-hd:4041/jobs/job?id=15",
+              "$$hashKey": "object:1680"
+            }
+          ],
+          "interpreterSettingId": "spark2"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672302157636_158498064",
+      "id": "paragraph_1672302157636_158498064",
+      "dateCreated": "2022-12-29T17:22:37+0900",
+      "dateStarted": "2022-12-29T17:25:54+0900",
+      "dateFinished": "2022-12-29T17:28:40+0900",
+      "status": "FINISHED",
+      "$$hashKey": "object:478"
+    },
+    {
+      "text": "%jdbc(hive)\nCREATE DATABASE example__db_movie_rating\nCOMMENT 'MovieLens 20M Dataset'\nLocation 'hdfs://catalog-test/user/hadoop-test/example__db_movig_rating';\n\nSHOW DATABASES;\n\nDESCRIBE DATABASE example__db_movie_rating;\n",
+      "user": "yea",
+      "dateUpdated": "2022-12-29T17:53:11+0900",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "database_name": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          },
+          "2": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "db_name": "string",
+                      "comment": "string",
+                      "location": "string",
+                      "owner_name": "string",
+                      "owner_type": "string",
+                      "parameters": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : -1\n"
+          },
+          {
+            "type": "TABLE",
+            "data": "database_name\ndefault\nexample__db_movie_rating\ninformation_schema\nsys\n"
+          },
+          {
+            "type": "TABLE",
+            "data": "db_name\tcomment\tlocation\towner_name\towner_type\tparameters\nexample__db_movie_rating\tMovieLens 20M Dataset\thdfs://catalog-test/user/hadoop-test/example__db_movig_rating\tyea\tUSER\t\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672302354391_866345208",
+      "id": "paragraph_1672302354391_866345208",
+      "dateCreated": "2022-12-29T17:25:54+0900",
+      "dateStarted": "2022-12-29T17:38:56+0900",
+      "dateFinished": "2022-12-29T17:38:56+0900",
+      "status": "FINISHED",
+      "$$hashKey": "object:479"
+    },
+    {
+      "text": "%jdbc(hive)\nUSE example__db_movie_rating;\n\nCREATE EXTERNAL TABLE movie_rating (movieId int, title string, genre string, releasedYear int, userId int, rating double)\npartitioned by (year int, month int) stored as parquet\nlocation 'hdfs://catalog-test/user/root/movie_rating';",
+      "user": "yea",
+      "dateUpdated": "2022-12-29T17:42:27+0900",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : -1\n\n"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : -1\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672302903318_1511356714",
+      "id": "paragraph_1672302903318_1511356714",
+      "dateCreated": "2022-12-29T17:35:03+0900",
+      "dateStarted": "2022-12-29T17:42:27+0900",
+      "dateFinished": "2022-12-29T17:42:28+0900",
+      "status": "FINISHED",
+      "$$hashKey": "object:480"
+    },
+    {
+      "text": "%jdbc(hive)\n// partition 추가 및 메타데이터 업데이트\nMSCK REPAIR TABLE movie_rating;\n\nSHOW TABLES;\n\nDESCRIBE movie_rating;\n\nSELECT * FROM movie_rating limit 3;",
+      "user": "yea",
+      "dateUpdated": "2022-12-29T23:26:48+0900",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {
+          "2": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "tab_name": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          },
+          "3": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "col_name": "string",
+                      "data_type": "string",
+                      "comment": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          },
+          "4": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "movieid": "string",
+                      "title": "string",
+                      "genre": "string",
+                      "releasedyear": "string",
+                      "userid": "string",
+                      "rating": "string",
+                      "year": "string",
+                      "month": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          },
+          "6": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "movieid": "string",
+                      "title": "string",
+                      "genre": "string",
+                      "releasedyear": "string",
+                      "userid": "string",
+                      "rating": "string",
+                      "year": "string",
+                      "month": "string"
+                    },
+                    "updated": true
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "INFO  : Compiling command(queryId=hive_20221229174231_4df5a543-ec11-48e5-9dc4-a993f7be62a3): \nMSCK REPAIR TABLE movie_rating\nINFO  : Semantic Analysis Completed (retrial = false)\nINFO  : Returning Hive schema: Schema(fieldSchemas:null, properties:null)\nINFO  : Completed compiling command(queryId=hive_20221229174231_4df5a543-ec11-48e5-9dc4-a993f7be62a3); Time taken: 0.039 seconds\nINFO  : Executing command(queryId=hive_20221229174231_4df5a543-ec11-48e5-9dc4-a993f7be62a3): \nMSCK REPAIR TABLE movie_rating\nINFO  : Starting task [Stage-0:DDL] in serial mode\nINFO  : Completed executing command(queryId=hive_20221229174231_4df5a543-ec11-48e5-9dc4-a993f7be62a3); Time taken: 2.804 seconds\nINFO  : OK\n\n"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query executed successfully. Affected rows : -1\n"
+          },
+          {
+            "type": "TABLE",
+            "data": "tab_name\nmovie_rating\n"
+          },
+          {
+            "type": "TABLE",
+            "data": "col_name\tdata_type\tcomment\nmovieid\tint\t\ntitle\tstring\t\ngenre\tstring\t\nreleasedyear\tint\t\nuserid\tint\t\nrating\tdouble\t\nyear\tint\t\nmonth\tint\t\n\tnull\tnull\n# Partition Information\tnull\tnull\n# col_name\tdata_type\tcomment\nyear\tint\t\nmonth\tint\t\n"
+          },
+          {
+            "type": "TABLE",
+            "data": "movieid\ttitle\tgenre\treleasedyear\tuserid\trating\tyear\tmonth\n21\tGet Shorty (1995)\tThriller\t1995\t131160\t3.0\t1995\t1\n21\tGet Shorty (1995)\tCrime\t1995\t131160\t3.0\t1995\t1\n21\tGet Shorty (1995)\tComedy\t1995\t131160\t3.0\t1995\t1\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672303106637_1749357552",
+      "id": "paragraph_1672303106637_1749357552",
+      "dateCreated": "2022-12-29T17:38:26+0900",
+      "dateStarted": "2022-12-29T17:42:30+0900",
+      "dateFinished": "2022-12-29T17:42:36+0900",
+      "status": "FINISHED",
+      "$$hashKey": "object:481"
+    },
+    {
+      "text": "%jdbc(hive)\nSELECT releasedYear, title, avgRating, row_num\nFROM (SELECT releasedYear, title, avg(rating) as avgRating, rank() over (partition by releasedYear order by avg(rating) desc) as row_num\nFROM movie_rating GROUP BY releasedYear, title) T\nwhere row_num <= 3 ORDER BY releasedYear, row_num;\n",
+      "user": "yea",
+      "dateUpdated": "2022-12-29T17:45:38+0900",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "releasedyear": "string",
+                      "title": "string",
+                      "avgrating": "string",
+                      "row_num": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "INFO  : Compiling command(queryId=hive_20221229174515_ce036f47-9c97-4477-86df-8b51c0bc3356): \nSELECT releasedYear, title, avgRating, row_num\nFROM (SELECT releasedYear, title, avg(rating) as avgRating, rank() over (partition by releasedYear order by avg(rating) desc) as row_num\nFROM movie_rating GROUP BY releasedYear, title) T\nwhere row_num <= 3 ORDER BY releasedYear, row_num\nINFO  : Semantic Analysis Completed (retrial = false)\nINFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:releasedyear, type:int, comment:null), FieldSchema(name:title, type:string, comment:null), FieldSchema(name:avgrating, type:double, comment:null), FieldSchema(name:row_num, type:int, comment:null)], properties:null)\nINFO  : Completed compiling command(queryId=hive_20221229174515_ce036f47-9c97-4477-86df-8b51c0bc3356); Time taken: 1.11 seconds\nINFO  : Executing command(queryId=hive_20221229174515_ce036f47-9c97-4477-86df-8b51c0bc3356): \nSELECT releasedYear, title, avgRating, row_num\nFROM (SELECT releasedYear, title, avg(rating) as avgRating, rank() over (partition by releasedYear order by avg(rating) desc) as row_num\nFROM movie_rating GROUP BY releasedYear, title) T\nwhere row_num <= 3 ORDER BY releasedYear, row_num\nINFO  : Query ID = hive_20221229174515_ce036f47-9c97-4477-86df-8b51c0bc3356\nINFO  : Total jobs = 1\nINFO  : Launching Job 1 out of 1\nINFO  : Starting task [Stage-1:MAPRED] in serial mode\nINFO  : Subscribed to counters: [] for queryId: hive_20221229174515_ce036f47-9c97-4477-86df-8b51c0bc3356\nINFO  : Tez session hasn't been created yet. Opening session\nINFO  : Dag name: SELECT releasedYear, title, avgRat...row_num (Stage-1)\nINFO  : Status: Running (Executing on YARN cluster with App id application_1672132606172_0012)\n\n\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2KMap 1            container        INITED     10          0        0       10       0       0  \nReducer 2        container        INITED     62          0        0       62       0       0  \nReducer 3        container        INITED     32          0        0       32       0       0  \nReducer 4        container        INITED      1          0        0        1       0       0  \n\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[31;1mVERTICES: 00/04  [>>--------------------------] 0%    ELAPSED TIME: 1.90 s     \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[10A\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2KMap 1            container       RUNNING     10          0        1        9       0       0  \nReducer 2        container        INITED     62          0        0       62       0       0  \nReducer 3        container        INITED     32          0        0       32       0       0  \nReducer 4        container        INITED      1          0        0        1       0       0  \n\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[31;1mVERTICES: 00/04  [>>--------------------------] 0%    ELAPSED TIME: 2.91 s     \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[10A\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2KMap 1            container       RUNNING     10          0       10        0       0       0  \nReducer 2        container        INITED     62          0        0       62       0       0  \nReducer 3        container        INITED     32          0        0       32       0       0  \nReducer 4        container        INITED      1          0        0        1       0       0  \n\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[31;1mVERTICES: 00/04  [>>--------------------------] 0%    ELAPSED TIME: 3.91 s     \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[10A\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2KMap 1            container       RUNNING     10          0       10        0       0       0  \nReducer 2        container        INITED     62          0        0       62       0       0  \nReducer 3        container        INITED     32          0        0       32       0       0  \nReducer 4        container        INITED      1          0        0        1       0       0  \n\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[31;1mVERTICES: 00/04  [>>--------------------------] 0%    ELAPSED TIME: 4.92 s     \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[10A\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2KMap 1            container       RUNNING     10          0       10        0       0       0  \nReducer 2        container        INITED     62          0        0       62       0       0  \nReducer 3        container        INITED     32          0        0       32       0       0  \nReducer 4        container        INITED      1          0        0        1       0       0  \n\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[31;1mVERTICES: 00/04  [>>--------------------------] 0%    ELAPSED TIME: 5.92 s     \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[10A\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2KMap 1            container       RUNNING     10          0       10        0       0       0  \nReducer 2        container        INITED     62          0        0       62       0       0  \nReducer 3        container        INITED     32          0        0       32       0       0  \nReducer 4        container        INITED      1          0        0        1       0       0  \n\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[31;1mVERTICES: 00/04  [>>--------------------------] 0%    ELAPSED TIME: 6.93 s     \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[10A\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2KMap 1            container       RUNNING     10          0       10        0       0       0  \nReducer 2        container        INITED     62          0        0       62       0       0  \nReducer 3        container        INITED     32          0        0       32       0       0  \nReducer 4        container        INITED      1          0        0        1       0       0  \n\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[31;1mVERTICES: 00/04  [>>--------------------------] 0%    ELAPSED TIME: 7.93 s     \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[10A\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2KMap 1            container       RUNNING     10          0       10        0       0       0  \nReducer 2        container        INITED     62          0        0       62       0       0  \nReducer 3        container        INITED     32          0        0       32       0       0  \nReducer 4        container        INITED      1          0        0        1       0       0  \n\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[31;1mVERTICES: 00/04  [>>--------------------------] 0%    ELAPSED TIME: 8.94 s     \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[10A\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2KMap 1 .          container       RUNNING     10          1        9        0       0       0  \nReducer 2        container        INITED     62          0        0       62       0       0  \nReducer 3        container        INITED     32          0        0       32       0       0  \nReducer 4        container        INITED      1          0        0        1       0       0  \n\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[31;1mVERTICES: 00/04  [>>--------------------------] 0%    ELAPSED TIME: 9.95 s     \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[10A\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2KMap 1 ...        container       RUNNING     10          3        7        0       0       0  \nReducer 2        container        INITED     62          0        0       62       0       0  \nReducer 3        container        INITED     32          0        0       32       0       0  \nReducer 4        container        INITED      1          0        0        1       0       0  \n\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[31;1mVERTICES: 00/04  [>>--------------------------] 2%    ELAPSED TIME: 10.95 s    \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[10A\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2KMap 1 .......... container     SUCCEEDED     10         10        0        0       0       0  \nReducer 2        container       RUNNING      8          0        8        0       0       0  \nReducer 3        container        INITED     32          0        0       32       0       0  \nReducer 4        container        INITED      1          0        0        1       0       0  \n\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[31;1mVERTICES: 01/04  [=====>>---------------------] 19%   ELAPSED TIME: 11.96 s    \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[10A\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2KMap 1 .......... container     SUCCEEDED     10         10        0        0       0       0  \nReducer 2        container       RUNNING      8          0        8        0       0       0  \nReducer 3        container        INITED     32          0        0       32       0       0  \nReducer 4        container        INITED      1          0        0        1       0       0  \n\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[31;1mVERTICES: 01/04  [=====>>---------------------] 19%   ELAPSED TIME: 13.46 s    \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[10A\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2KMap 1 .......... container     SUCCEEDED     10         10        0        0       0       0  \nReducer 2 ...... container     SUCCEEDED      8          8        0        0       0       0  \nReducer 3 ...... container     SUCCEEDED      4          4        0        0       0       0  \nReducer 4 ...... container     SUCCEEDED      1          1        0        0       0       0  \n\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[31;1mVERTICES: 04/04  [==========================>>] 100%  ELAPSED TIME: 14.81 s    \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\nINFO  : Status: DAG finished successfully in 14.69 seconds\nINFO  : \nINFO  : Query Execution Summary\nINFO  : ----------------------------------------------------------------------------------------------\nINFO  : OPERATION                            DURATION\nINFO  : ----------------------------------------------------------------------------------------------\nINFO  : Compile Query                           1.11s\nINFO  : Prepare Plan                            5.80s\nINFO  : Get Query Coordinator (AM)              0.01s\nINFO  : Submit Plan                             0.43s\nINFO  : Start DAG                               1.07s\nINFO  : Run DAG                                14.69s\nINFO  : ----------------------------------------------------------------------------------------------\nINFO  : \nINFO  : Task Execution Summary\nINFO  : ----------------------------------------------------------------------------------------------\nINFO  :   VERTICES      DURATION(ms)   CPU_TIME(ms)    GC_TIME(ms)   INPUT_RECORDS   OUTPUT_RECORDS\nINFO  : ----------------------------------------------------------------------------------------------\nINFO  :      Map 1           8918.00        109,440          7,237      53,103,010          119,971\nINFO  :  Reducer 2           2079.00         22,780            728         119,971            2,773\nINFO  :  Reducer 3           1013.00          4,280            141           2,773              311\nINFO  :  Reducer 4            506.00          1,130             37             311                0\nINFO  : ----------------------------------------------------------------------------------------------\nINFO  : \nINFO  : org.apache.tez.common.counters.DAGCounter:\nINFO  :    NUM_SUCCEEDED_TASKS: 23\nINFO  :    TOTAL_LAUNCHED_TASKS: 23\nINFO  :    DATA_LOCAL_TASKS: 9\nINFO  :    RACK_LOCAL_TASKS: 1\nINFO  :    AM_CPU_MILLISECONDS: 7270\nINFO  :    AM_GC_TIME_MILLIS: 30\nINFO  : File System Counters:\nINFO  :    FILE_BYTES_READ: 35031847\nINFO  :    FILE_BYTES_WRITTEN: 4862048\nINFO  :    HDFS_BYTES_READ: 50850477\nINFO  :    HDFS_BYTES_WRITTEN: 21169\nINFO  :    HDFS_READ_OPS: 1389\nINFO  :    HDFS_WRITE_OPS: 2\nINFO  :    HDFS_OP_CREATE: 1\nINFO  :    HDFS_OP_GET_FILE_STATUS: 696\nINFO  :    HDFS_OP_OPEN: 693\nINFO  :    HDFS_OP_RENAME: 1\nINFO  : org.apache.tez.common.counters.TaskCounter:\nINFO  :    REDUCE_INPUT_GROUPS: 18139\nINFO  :    REDUCE_INPUT_RECORDS: 123055\nINFO  :    COMBINE_INPUT_RECORDS: 0\nINFO  :    SPILLED_RECORDS: 246110\nINFO  :    NUM_SHUFFLED_INPUTS: 880\nINFO  :    NUM_SKIPPED_INPUTS: 0\nINFO  :    NUM_FAILED_SHUFFLE_INPUTS: 0\nINFO  :    MERGED_MAP_OUTPUTS: 880\nINFO  :    GC_TIME_MILLIS: 8143\nINFO  :    TASK_DURATION_MILLIS: 97627\nINFO  :    CPU_MILLISECONDS: 137630\nINFO  :    PHYSICAL_MEMORY_BYTES: 13192134656\nINFO  :    VIRTUAL_MEMORY_BYTES: 59145154560\nINFO  :    COMMITTED_HEAP_BYTES: 13192134656\nINFO  :    INPUT_RECORDS_PROCESSED: 51980\nINFO  :    INPUT_SPLIT_LENGTH_BYTES: 139910435\nINFO  :    OUTPUT_RECORDS: 123055\nINFO  :    OUTPUT_LARGE_RECORDS: 0\nINFO  :    OUTPUT_BYTES: 5595868\nINFO  :    OUTPUT_BYTES_WITH_OVERHEAD: 5847328\nINFO  :    OUTPUT_BYTES_PHYSICAL: 4003886\nINFO  :    ADDITIONAL_SPILLS_BYTES_WRITTEN: 836866\nINFO  :    ADDITIONAL_SPILLS_BYTES_READ: 2814601\nINFO  :    ADDITIONAL_SPILL_COUNT: 0\nINFO  :    SHUFFLE_CHUNK_COUNT: 22\nINFO  :    SHUFFLE_BYTES: 4003886\nINFO  :    SHUFFLE_BYTES_DECOMPRESSED: 5847328\nINFO  :    SHUFFLE_BYTES_TO_MEM: 2026151\nINFO  :    SHUFFLE_BYTES_TO_DISK: 0\nINFO  :    SHUFFLE_BYTES_DISK_DIRECT: 1977735\nINFO  :    NUM_MEM_TO_DISK_MERGES: 0\nINFO  :    NUM_DISK_TO_DISK_MERGES: 0\nINFO  :    SHUFFLE_PHASE_TIME: 7998\nINFO  :    MERGE_PHASE_TIME: 9386\nINFO  :    FIRST_EVENT_RECEIVED: 2307\nINFO  :    LAST_EVENT_RECEIVED: 3763\nINFO  : HIVE:\nINFO  :    CREATED_FILES: 1\nINFO  :    DESERIALIZE_ERRORS: 0\nINFO  :    RECORDS_IN_Map_1: 53103010\nINFO  :    RECORDS_OUT_0: 311\nINFO  :    RECORDS_OUT_INTERMEDIATE_Map_1: 119971\nINFO  :    RECORDS_OUT_INTERMEDIATE_Reducer_2: 2773\nINFO  :    RECORDS_OUT_INTERMEDIATE_Reducer_3: 311\nINFO  :    RECORDS_OUT_INTERMEDIATE_Reducer_4: 0\nINFO  :    RECORDS_OUT_OPERATOR_FIL_24: 311\nINFO  :    RECORDS_OUT_OPERATOR_FS_28: 311\nINFO  :    RECORDS_OUT_OPERATOR_GBY_18: 119971\nINFO  :    RECORDS_OUT_OPERATOR_GBY_20: 15074\nINFO  :    RECORDS_OUT_OPERATOR_MAP_0: 0\nINFO  :    RECORDS_OUT_OPERATOR_PTF_23: 2773\nINFO  :    RECORDS_OUT_OPERATOR_RS_19: 119971\nINFO  :    RECORDS_OUT_OPERATOR_RS_21: 2773\nINFO  :    RECORDS_OUT_OPERATOR_RS_26: 311\nINFO  :    RECORDS_OUT_OPERATOR_SEL_17: 53103010\nINFO  :    RECORDS_OUT_OPERATOR_SEL_22: 2773\nINFO  :    RECORDS_OUT_OPERATOR_SEL_25: 311\nINFO  :    RECORDS_OUT_OPERATOR_SEL_27: 311\nINFO  :    RECORDS_OUT_OPERATOR_TS_0: 53103010\nINFO  : Shuffle Errors:\nINFO  :    BAD_ID: 0\nINFO  :    CONNECTION: 0\nINFO  :    IO_ERROR: 0\nINFO  :    WRONG_LENGTH: 0\nINFO  :    WRONG_MAP: 0\nINFO  :    WRONG_REDUCE: 0\nINFO  : Shuffle Errors_Reducer_2_INPUT_Map_1:\nINFO  :    BAD_ID: 0\nINFO  :    CONNECTION: 0\nINFO  :    IO_ERROR: 0\nINFO  :    WRONG_LENGTH: 0\nINFO  :    WRONG_MAP: 0\nINFO  :    WRONG_REDUCE: 0\nINFO  : Shuffle Errors_Reducer_3_INPUT_Reducer_2:\nINFO  :    BAD_ID: 0\nINFO  :    CONNECTION: 0\nINFO  :    IO_ERROR: 0\nINFO  :    WRONG_LENGTH: 0\nINFO  :    WRONG_MAP: 0\nINFO  :    WRONG_REDUCE: 0\nINFO  : Shuffle Errors_Reducer_4_INPUT_Reducer_3:\nINFO  :    BAD_ID: 0\nINFO  :    CONNECTION: 0\nINFO  :    IO_ERROR: 0\nINFO  :    WRONG_LENGTH: 0\nINFO  :    WRONG_MAP: 0\nINFO  :    WRONG_REDUCE: 0\nINFO  : TaskCounter_Map_1_INPUT_movie_rating:\nINFO  :    INPUT_RECORDS_PROCESSED: 51980\nINFO  :    INPUT_SPLIT_LENGTH_BYTES: 139910435\nINFO  : TaskCounter_Map_1_OUTPUT_Reducer_2:\nINFO  :    ADDITIONAL_SPILLS_BYTES_READ: 0\nINFO  :    ADDITIONAL_SPILLS_BYTES_WRITTEN: 0\nINFO  :    ADDITIONAL_SPILL_COUNT: 0\nINFO  :    OUTPUT_BYTES: 5422532\nINFO  :    OUTPUT_BYTES_PHYSICAL: 3850485\nINFO  :    OUTPUT_BYTES_WITH_OVERHEAD: 5666262\nINFO  :    OUTPUT_LARGE_RECORDS: 0\nINFO  :    OUTPUT_RECORDS: 119971\nINFO  :    SHUFFLE_CHUNK_COUNT: 10\nINFO  :    SPILLED_RECORDS: 119971\nINFO  : TaskCounter_Reducer_2_INPUT_Map_1:\nINFO  :    ADDITIONAL_SPILLS_BYTES_READ: 2671504\nINFO  :    ADDITIONAL_SPILLS_BYTES_WRITTEN: 771915\nINFO  :    COMBINE_INPUT_RECORDS: 0\nINFO  :    FIRST_EVENT_RECEIVED: 2113\nINFO  :    LAST_EVENT_RECEIVED: 2662\nINFO  :    MERGED_MAP_OUTPUTS: 620\nINFO  :    MERGE_PHASE_TIME: 7920\nINFO  :    NUM_DISK_TO_DISK_MERGES: 0\nINFO  :    NUM_FAILED_SHUFFLE_INPUTS: 0\nINFO  :    NUM_MEM_TO_DISK_MERGES: 0\nINFO  :    NUM_SHUFFLED_INPUTS: 620\nINFO  :    NUM_SKIPPED_INPUTS: 0\nINFO  :    REDUCE_INPUT_GROUPS: 15074\nINFO  :    REDUCE_INPUT_RECORDS: 119971\nINFO  :    SHUFFLE_BYTES: 3850485\nINFO  :    SHUFFLE_BYTES_DECOMPRESSED: 5666262\nINFO  :    SHUFFLE_BYTES_DISK_DIRECT: 1899589\nINFO  :    SHUFFLE_BYTES_TO_DISK: 0\nINFO  :    SHUFFLE_BYTES_TO_MEM: 1950896\nINFO  :    SHUFFLE_PHASE_TIME: 6649\nINFO  :    SPILLED_RECORDS: 119971\nINFO  : TaskCounter_Reducer_2_OUTPUT_Reducer_3:\nINFO  :    ADDITIONAL_SPILLS_BYTES_READ: 0\nINFO  :    ADDITIONAL_SPILLS_BYTES_WRITTEN: 0\nINFO  :    ADDITIONAL_SPILL_COUNT: 0\nINFO  :    OUTPUT_BYTES: 157377\nINFO  :    OUTPUT_BYTES_PHYSICAL: 140969\nINFO  :    OUTPUT_BYTES_WITH_OVERHEAD: 164461\nINFO  :    OUTPUT_LARGE_RECORDS: 0\nINFO  :    OUTPUT_RECORDS: 2773\nINFO  :    SHUFFLE_CHUNK_COUNT: 8\nINFO  :    SPILLED_RECORDS: 2773\nINFO  : TaskCounter_Reducer_3_INPUT_Reducer_2:\nINFO  :    ADDITIONAL_SPILLS_BYTES_READ: 130812\nINFO  :    ADDITIONAL_SPILLS_BYTES_WRITTEN: 59050\nINFO  :    COMBINE_INPUT_RECORDS: 0\nINFO  :    FIRST_EVENT_RECEIVED: 189\nINFO  :    LAST_EVENT_RECEIVED: 416\nINFO  :    MERGED_MAP_OUTPUTS: 256\nINFO  :    MERGE_PHASE_TIME: 775\nINFO  :    NUM_DISK_TO_DISK_MERGES: 0\nINFO  :    NUM_FAILED_SHUFFLE_INPUTS: 0\nINFO  :    NUM_MEM_TO_DISK_MERGES: 0\nINFO  :    NUM_SHUFFLED_INPUTS: 256\nINFO  :    NUM_SKIPPED_INPUTS: 0\nINFO  :    REDUCE_INPUT_GROUPS: 2755\nINFO  :    REDUCE_INPUT_RECORDS: 2773\nINFO  :    SHUFFLE_BYTES: 140969\nINFO  :    SHUFFLE_BYTES_DECOMPRESSED: 164461\nINFO  :    SHUFFLE_BYTES_DISK_DIRECT: 71762\nINFO  :    SHUFFLE_BYTES_TO_DISK: 0\nINFO  :    SHUFFLE_BYTES_TO_MEM: 69207\nINFO  :    SHUFFLE_PHASE_TIME: 662\nINFO  :    SPILLED_RECORDS: 2773\nINFO  : TaskCounter_Reducer_3_OUTPUT_Reducer_4:\nINFO  :    ADDITIONAL_SPILLS_BYTES_READ: 0\nINFO  :    ADDITIONAL_SPILLS_BYTES_WRITTEN: 0\nINFO  :    ADDITIONAL_SPILL_COUNT: 0\nINFO  :    OUTPUT_BYTES: 15959\nINFO  :    OUTPUT_BYTES_PHYSICAL: 12432\nINFO  :    OUTPUT_BYTES_WITH_OVERHEAD: 16605\nINFO  :    OUTPUT_LARGE_RECORDS: 0\nINFO  :    OUTPUT_RECORDS: 311\nINFO  :    SHUFFLE_CHUNK_COUNT: 4\nINFO  :    SPILLED_RECORDS: 311\nINFO  : TaskCounter_Reducer_4_INPUT_Reducer_3:\nINFO  :    ADDITIONAL_SPILLS_BYTES_READ: 12285\nINFO  :    ADDITIONAL_SPILLS_BYTES_WRITTEN: 5901\nINFO  :    COMBINE_INPUT_RECORDS: 0\nINFO  :    FIRST_EVENT_RECEIVED: 5\nINFO  :    LAST_EVENT_RECEIVED: 685\nINFO  :    MERGED_MAP_OUTPUTS: 4\nINFO  :    MERGE_PHASE_TIME: 691\nINFO  :    NUM_DISK_TO_DISK_MERGES: 0\nINFO  :    NUM_FAILED_SHUFFLE_INPUTS: 0\nINFO  :    NUM_MEM_TO_DISK_MERGES: 0\nINFO  :    NUM_SHUFFLED_INPUTS: 4\nINFO  :    NUM_SKIPPED_INPUTS: 0\nINFO  :    REDUCE_INPUT_GROUPS: 310\nINFO  :    REDUCE_INPUT_RECORDS: 311\nINFO  :    SHUFFLE_BYTES: 12432\nINFO  :    SHUFFLE_BYTES_DECOMPRESSED: 16605\nINFO  :    SHUFFLE_BYTES_DISK_DIRECT: 6384\nINFO  :    SHUFFLE_BYTES_TO_DISK: 0\nINFO  :    SHUFFLE_BYTES_TO_MEM: 6048\nINFO  :    SHUFFLE_PHASE_TIME: 687\nINFO  :    SPILLED_RECORDS: 311\nINFO  : TaskCounter_Reducer_4_OUTPUT_out_Reducer_4:\nINFO  :    OUTPUT_RECORDS: 0\nINFO  : org.apache.hadoop.hive.ql.exec.tez.HiveInputCounters:\nINFO  :    GROUPED_INPUT_SPLITS_Map_1: 10\nINFO  :    INPUT_DIRECTORIES_Map_1: 231\nINFO  :    INPUT_FILES_Map_1: 231\nINFO  :    RAW_INPUT_SPLITS_Map_1: 231\nINFO  : Completed executing command(queryId=hive_20221229174515_ce036f47-9c97-4477-86df-8b51c0bc3356); Time taken: 22.096 seconds\nINFO  : OK\n"
+          },
+          {
+            "type": "TABLE",
+            "data": "releasedyear\ttitle\tavgrating\trow_num\nnull\tFawlty Towers (1975-1979)\t4.128260869565217\t1\nnull\tBabylon 5\t3.8660714285714284\t2\nnull\tBig Bang Theory, The (2007-)\t3.4216867469879517\t3\n1896\tArrival of a Train, The (1896)\t3.4375\t1\n1902\tTrip to the Moon, A (Voyage dans la lune, Le) (1902)\t3.7381889763779528\t1\n1903\tGreat Train Robbery, The (1903)\t3.340909090909091\t1\n1910\tFrankenstein (1910)\t3.466666666666667\t1\n1912\tCameraman's Revenge, The (Mest kinematograficheskogo operatora) (1912)\t3.892857142857143\t1\n1914\tTillie's Punctured Romance (1914)\t3.076923076923077\t1\n1914\tAlways Tell Your Wife (1914)\t1.8846153846153846\t2\n1915\tVampires, Les (1915)\t3.433333333333333\t1\n1915\tBirth of a Nation, The (1915)\t3.228650137741047\t2\n1916\tIntolerance: Love's Struggle Throughout the Ages (1916)\t3.7192513368983957\t1\n1916\tSnow White (1916)\t3.317073170731707\t2\n1916\t20,000 Leagues Under the Sea (1916)\t3.257142857142857\t3\n1917\tImmigrant, The (1917)\t3.7\t1\n1917\tEasy Street (1917)\t3.25\t2\n1918\tDog's Life, A (1918)\t3.608974358974359\t1\n1918\tShoulder Arms (1918)\t3.235294117647059\t2\n1919\tBroken Blossoms or The Yellow Man and the Girl (1919)\t3.5952380952380953\t1\n1919\tDaddy Long Legs (1919)\t3.433774834437086\t2\n1919\tMale and Female (1919)\t2.9285714285714284\t3\n1920\tCabinet of Dr. Caligari, The (Cabinet des Dr. Caligari., Das) (1920)\t3.9123188405797102\t1\n1920\tOne Week (1920)\t3.8043478260869565\t2\n1920\tWay Down East (1920)\t3.641304347826087\t3\n1921\tKid, The (1921)\t3.9176470588235293\t1\n1921\tGoat, The (1921)\t3.823529411764706\t2\n1921\tPhantom Carriage, The (Körkarlen) (1921)\t3.7804878048780486\t3\n1922\tNosferatu (Nosferatu, eine Symphonie des Grauens) (1922)\t3.8980219192729217\t1\n1922\tCops (1922)\t3.82\t2\n1922\tNanook of the North (1922)\t3.7333333333333334\t3\n1923\tSafety Last! (1923)\t3.9357366771159876\t1\n1923\tOur Hospitality (1923)\t3.8118811881188117\t2\n1923\tTen Commandments, The (1923)\t3.78125\t3\n1924\tNibelungen: Siegfried, Die (1924)\t3.9761904761904763\t1\n1924\tSherlock Jr. (1924)\t3.9393564356435644\t2\n1924\tLast Laugh, The (Letzte Mann, Der) (1924)\t3.898076923076923\t3\n1925\tGold Rush, The (1925)\t4.088090551181103\t1\n1925\tSeven Chances (1925)\t3.915151515151515\t2\n1925\tBattleship Potemkin (1925)\t3.8960286817429672\t3\n1926\tGeneral, The (1926)\t4.162769784172662\t1\n1926\tFaust (1926)\t3.801498127340824\t2\n1926\tAdventures of Prince Achmed, The (Abenteuer des Prinzen Achmed, Die) (1926)\t3.6447368421052633\t3\n1927\tSunrise: A Song of Two Humans (1927)\t4.039045553145336\t1\n1927\tMetropolis (1927)\t3.990895714548464\t2\n1927\tWings (1927)\t3.721362229102167\t3\n1928\tPassion of Joan of Arc, The (Passion de Jeanne d'Arc, La) (1928)\t4.03652058432935\t1\n1928\tCircus, The (1928)\t3.9110169491525424\t2\n1928\tSteamboat Bill, Jr. (1928)\t3.890625\t3\n1929\tMan with the Movie Camera, The (Chelovek s kino-apparatom) (1929)\t3.9644495412844036\t1\n1929\tPandora's Box (Büchse der Pandora, Die) (1929)\t3.8850574712643677\t2\n1929\tAndalusian Dog, An (Chien andalou, Un) (1929)\t3.853125\t3\n1930\tAll Quiet on the Western Front (1930)\t3.954230769230769\t1\n1930\tAnimal Crackers (1930)\t3.9343817787418653\t2\n1930\tBlue Angel, The (Blaue Engel, Der) (1930)\t3.8930936613055818\t3\n1931\tM (1931)\t4.193171077504726\t1\n1931\tCity Lights (1931)\t4.174122637871192\t2\n1931\tMaltese Falcon, The (a.k.a. Dangerous Female) (1931)\t4.058135072908672\t3\n1932\tTrouble in Paradise (1932)\t3.972938144329897\t1\n1932\tHorse Feathers (1932)\t3.9611048478015785\t2\n1932\tI Am a Fugitive from a Chain Gang (1932)\t3.8538732394366195\t3\n1933\tDuck Soup (1933)\t4.129646256060334\t1\n1933\tTestament of Dr. Mabuse, The (Das Testament des Dr. Mabuse) (1933)\t3.89917695473251\t2\n1933\tLand Without Bread (Hurdes, tierra sin pan, Las) (1933)\t3.7222222222222223\t3\n1934\tThin Man, The (1934)\t4.184187016081\t1\n1934\tIt Happened One Night (1934)\t4.170052581261951\t2\n1934\tGay Divorcee, The (1934)\t3.930400890868597\t3\n1935\tTop Hat (1935)\t4.058018867924528\t1\n1935\tNight at the Opera, A (1935)\t4.047279792746114\t2\n1935\t39 Steps, The (1935)\t4.003311258278146\t3\n1936\tModern Times (1936)\t4.143086816720257\t1\n1936\tMy Man Godfrey (1936)\t4.068142610695802\t2\n1936\tDay in the Country, A (Partie de campagne) (1936)\t4.0\t3\n1937\tGrand Illusion (La grande illusion) (1937)\t4.150878293601004\t1\n1937\tShall We Dance (1937)\t3.988339222614841\t2\n1937\tDay at the Races, A (1937)\t3.943871706758305\t3\n1938\tLady Vanishes, The (1938)\t4.086520947176685\t1\n1938\tBringing Up Baby (1938)\t4.061102326632031\t2\n1938\tHoliday (1938)\t3.9544392523364484\t3\n1939\tRules of the Game, The (La règle du jeu) (1939)\t4.058\t1\n1939\tMr. Smith Goes to Washington (1939)\t4.03265056022409\t2\n1939\tNinotchka (1939)\t4.010283687943263\t3\n1940\tPhiladelphia Story, The (1940)\t4.171426401336777\t1\n1940\tHis Girl Friday (1940)\t4.1529984623270115\t2\n1940\tRebecca (1940)\t4.1159716251074805\t3\n1941\tMaltese Falcon, The (1941)\t4.187211791831357\t1\n1941\tCitizen Kane (1941)\t4.1304433442106445\t2\n1941\tLady Eve, The (1941)\t4.130185979971388\t3\n1942\tCasablanca (1942)\t4.258326830670664\t1\n1942\tPalm Beach Story, The (1942)\t4.0875995449374285\t2\n1942\tNow, Voyager (1942)\t3.9830148619957537\t3\n1943\tShadow of a Doubt (1943)\t4.1596180081855385\t1\n1943\tLife and Death of Colonel Blimp, The (1943)\t3.9786184210526314\t2\n1943\tOx-Bow Incident, The (1943)\t3.9141304347826087\t3\n1944\tDouble Indemnity (1944)\t4.224281931146873\t1\n1944\tLaura (1944)\t4.111321469140477\t2\n1944\tArsenic and Old Lace (1944)\t4.053597331012474\t3\n1945\tChildren of Paradise (Les enfants du paradis) (1945)\t4.11736641221374\t1\n1945\tRome, Open City (a.k.a. Open City) (Roma, città aperta) (1945)\t3.997907949790795\t2\n1945\tMildred Pierce (1945)\t3.951949229374433\t3\n1946\tBig Sleep, The (1946)\t4.207361186471333\t1\n1946\tNotorious (1946)\t4.1977899432279\t2\n1946\tBest Years of Our Lives, The (1946)\t4.114776444929117\t3\n1947\tOut of the Past (1947)\t4.118761552680222\t1\n1947\tPossessed (1947)\t3.9285714285714284\t2\n1947\tBlack Narcissus (1947)\t3.837431693989071\t3\n1948\tTreasure of the Sierra Madre, The (1948)\t4.161396702230844\t1\n1948\tBicycle Thieves (a.k.a. The Bicycle Thief) (a.k.a. The Bicycle Thieves) (Ladri di biciclette) (1948)\t4.143596986817326\t2\n1948\tKey Largo (1948)\t4.012602058927937\t3\n1949\tThird Man, The (1949)\t4.246001523229246\t1\n1949\tKind Hearts and Coronets (1949)\t4.067738231917336\t2\n1949\tWhite Heat (1949)\t4.007075471698113\t3\n1950\tSunset Blvd. (a.k.a. Sunset Boulevard) (1950)\t4.256934865900383\t1\n1950\tAll About Eve (1950)\t4.2041027766266055\t2\n1950\tRashomon (Rashômon) (1950)\t4.176724137931035\t3\n1951\tStrangers on a Train (1951)\t4.158614668218859\t1\n1951\tAfrican Queen, The (1951)\t4.101558046741403\t2\n1951\tStreetcar Named Desire, A (1951)\t4.008160703075958\t3\n1952\tIkiru (1952)\t4.124329159212881\t1\n1952\tSingin' in the Rain (1952)\t4.0808787552598105\t2\n1952\tHigh Noon (1952)\t4.075288403157256\t3\n1953\tStalag 17 (1953)\t4.105514316012726\t1\n1953\tWages of Fear, The (Salaire de la peur, Le) (1953)\t4.082865168539326\t2\n1953\tRoman Holiday (1953)\t4.081865458815635\t3\n1954\tSeven Samurai (Shichinin no samurai) (1954)\t4.2741796572216\t1\n1954\tRear Window (1954)\t4.271333600779414\t2\n1954\tOn the Waterfront (1954)\t4.163536498936924\t3\n1955\tSong of the Little Road (Pather Panchali) (1955)\t4.139947437582129\t1\n1955\tRififi (Du rififi chez les hommes) (1955)\t4.08311345646438\t2\n1955\tNight of the Hunter, The (1955)\t4.066315789473684\t3\n1956\tKilling, The (1956)\t4.0964285714285715\t1\n1956\tMan Escaped, A (Un  condamné à mort s'est échappé ou Le vent souffle où il veut) (1956)\t3.9948979591836733\t2\n1956\tSearchers, The (1956)\t3.992951127819549\t3\n1957\tPaths of Glory (1957)\t4.2326233183856505\t1\n1957\t12 Angry Men (1957)\t4.224137931034483\t2\n1957\tWitness for the Prosecution (1957)\t4.146604938271605\t3\n1958\tTouch of Evil (1958)\t4.183022467147096\t1\n1958\tVertigo (1958)\t4.148006243791684\t2\n1958\tMusic Room, The (Jalsaghar) (1958)\t3.98\t3\n1959\tNorth by Northwest (1959)\t4.233538107122288\t1\n1959\t400 Blows, The (Les quatre cents coups) (1959)\t4.136267976148719\t2\n1959\tWorld of Apu, The (Apur Sansar) (1959)\t4.124836601307189\t3\n1960\tInherit the Wind (1960)\t4.090041279669762\t1\n1960\tPsycho (1960)\t4.076899587765281\t2\n1960\tApartment, The (1960)\t4.046146341463414\t3\n1961\tYojimbo (1961)\t4.211716774374825\t1\n1961\tHustler, The (1961)\t4.1246523388116305\t2\n1961\tThrough a Glass Darkly (Såsom i en spegel) (1961)\t4.0\t3\n1962\tTo Kill a Mockingbird (1962)\t4.188943056401923\t1\n1962\tLawrence of Arabia (1962)\t4.162102116658588\t2\n1962\tManchurian Candidate, The (1962)\t4.128504672897196\t3\n1963\tGreat Escape, The (1963)\t4.137655906089509\t1\n1963\tHigh and Low (Tengoku to jigoku) (1963)\t4.099833610648918\t2\n1963\tCharade (1963)\t4.069916297390448\t3\n1964\tDr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb (1964)\t4.247286821705426\t1\n1964\tLonely Wife, The (Charulata) (1964)\t4.038461538461538\t2\n1964\tSeven Days in May (1964)\t4.0206703910614525\t3\n1965\tRed Beard (Akahige) (1965)\t4.04932735426009\t1\n1965\tFor a Few Dollars More (Per qualche dollaro in più) (1965)\t3.9730487278999567\t2\n1965\tShop on Main Street, The (Obchod na korze) (1965)\t3.9679144385026737\t3\n1966\tMan for All Seasons, A (1966)\t4.13259538389072\t1\n1966\tGood, the Bad and the Ugly, The (Buono, il brutto, il cattivo, Il) (1966)\t4.123240894039735\t2\n1966\tPersona (1966)\t4.110200364298725\t3\n1967\tCool Hand Luke (1967)\t4.109838809125342\t1\n1967\tGraduate, The (1967)\t4.073889312753096\t2\n1967\tIn the Heat of the Night (1967)\t4.073789504204117\t3\n1968\tOnce Upon a Time in the West (C'era una volta il West) (1968)\t4.128545495802133\t1\n1968\tHigh School (1968)\t4.088235294117647\t2\n1968\tLion in Winter, The (1968)\t4.050214329454991\t3\n1969\tAndrei Rublev (Andrey Rublyov) (1969)\t4.075993091537133\t1\n1969\tButch Cassidy and the Sundance Kid (1969)\t4.0536379997428975\t2\n1969\tSorrow and the Pity, The (Le chagrin et la pitié) (1969)\t4.038461538461538\t3\n1970\tConformist, The (Conformista, Il) (1970)\t4.054037267080745\t1\n1970\tPatton (1970)\t4.0442564668382985\t2\n1970\tLittle Big Man (1970)\t3.980287627076618\t3\n1971\tHarold and Maude (1971)\t3.999814034217704\t1\n1971\tClockwork Orange, A (1971)\t3.995302502632218\t2\n1971\tLast Picture Show, The (1971)\t3.9950585651537334\t3\n1972\tGodfather, The (1972)\t4.364732196832306\t1\n1972\tPhone Box, The (Cabina, La) (1972)\t4.131578947368421\t2\n1972\tWinter Soldier (1972)\t4.045454545454546\t3\n1973\tSting, The (1973)\t4.173556210639153\t1\n1973\tScenes From a Marriage (Scener ur ett äktenskap) (1973)\t4.083501006036217\t2\n1973\tBadlands (1973)\t4.044859813084112\t3\n1974\tGodfather: Part II, The (1974)\t4.275640557704942\t1\n1974\tChinatown (1974)\t4.199673416067929\t2\n1974\tConversation, The (1974)\t4.089211618257261\t3\n1975\tOne Flew Over the Cuckoo's Nest (1975)\t4.24807897901911\t1\n1975\tMonty Python and the Holy Grail (1975)\t4.174146075581396\t2\n1975\tDersu Uzala (1975)\t4.075851393188855\t3\n1976\tTaxi Driver (1976)\t4.110575548384461\t1\n1976\tAll the President's Men (1976)\t4.0390660592255125\t2\n1976\tNetwork (1976)\t4.022281982328083\t3\n1977\tStar Wars: Episode IV - A New Hope (1977)\t4.190671901948552\t1\n1977\tAnnie Hall (1977)\t4.081258532145875\t2\n1977\tThat Obscure Object of Desire (Cet obscur objet du désir) (1977)\t4.003125\t3\n1978\tDon (1978)\t4.105263157894737\t1\n1978\tLast Waltz, The (1978)\t3.9956942949407965\t2\n1978\tDeer Hunter, The (1978)\t3.9866628830874005\t3\n1979\tApocalypse Now (1979)\t4.108899956691208\t1\n1979\tManhattan (1979)\t4.071038928837094\t2\n1979\tAlien (1979)\t4.041783855429476\t3\n1980\tCosmos (1980)\t4.2206196581196584\t1\n1980\tStar Wars: Episode V - The Empire Strikes Back (1980)\t4.188202061218635\t2\n1980\tRaging Bull (1980)\t4.083410565338276\t3\n1981\tRaiders of the Lost Ark (Indiana Jones and the Raiders of the Lost Ark) (1981)\t4.219009123455364\t1\n1981\tBoot, Das (Boat, The) (1981)\t4.139729650308551\t2\n1981\tProfessional, The (Le professionnel) (1981)\t4.101890989988877\t3\n1982\tBlade Runner (1982)\t4.133705693507174\t1\n1982\tGandhi (1982)\t3.993667730355006\t2\n1982\tFanny and Alexander (Fanny och Alexander) (1982)\t3.9653762268266086\t3\n1983\tChristmas Story, A (1983)\t4.030887583114272\t1\n1983\tStar Wars: Episode VI - Return of the Jedi (1983)\t4.004622216528961\t2\n1983\tSunless (Sans Soleil) (1983)\t3.9682926829268292\t3\n1984\tStop Making Sense (1984)\t4.1288777372262775\t1\n1984\tNausicaä of the Valley of the Wind (Kaze no tani no Naushika) (1984)\t4.092081583683263\t2\n1984\tKilling Fields, The (1984)\t4.09006993006993\t3\n1985\tGuest from the Future (Gostya iz buduschego) (1985)\t4.2\t1\n1985\tRan (1985)\t4.173611111111111\t2\n1985\tTampopo (1985)\t4.082474226804123\t3\n1986\tJean de Florette (1986)\t4.139051432091161\t1\n1986\tManon of the Spring (Manon des sources) (1986)\t4.082516339869281\t2\n1986\tLaputa: Castle in the Sky (Tenkû no shiro Rapyuta) (1986)\t4.061916878710772\t3\n1987\tPrincess Bride, The (1987)\t4.1767323390413065\t1\n1987\tMatewan (1987)\t4.06781914893617\t2\n1987\tFull Metal Jacket (1987)\t4.033179786554775\t3\n1988\tMy Neighbor Totoro (Tonari no Totoro) (1988)\t4.1494807797413005\t1\n1988\tThin Blue Line, The (1988)\t4.128888888888889\t2\n1988\tGrave of the Fireflies (Hotaru no haka) (1988)\t4.089743589743589\t3\n1989\tDecalogue, The (Dekalog) (1989)\t4.174129353233831\t1\n1989\tCinema Paradiso (Nuovo cinema Paradiso) (1989)\t4.154010989010989\t2\n1989\tHenry V (1989)\t4.120811855670103\t3\n1990\tGoodfellas (1990)\t4.183632507763387\t1\n1990\tStrangers in Good Company (1990)\t4.153846153846154\t2\n1990\tCivil War, The (1990)\t4.11328125\t3\n1991\tSilence of the Lambs, The (1991)\t4.17705650958151\t1\n1991\tRaise the Red Lantern (Da hong deng long gao gao gua) (1991)\t4.144328312327083\t2\n1991\tPrime Suspect (1991)\t4.1125\t3\n1992\tReservoir Dogs (1992)\t4.089361317170255\t1\n1992\tBaraka (1992)\t4.051041666666666\t2\n1992\tUnforgiven (1992)\t3.9883400466398133\t3\n1993\tSchindler's List (1993)\t4.310175010988133\t1\n1993\tWallace & Gromit: The Wrong Trousers (1993)\t4.181067767274664\t2\n1993\tSome Folks Call It a Sling Blade (1993)\t4.093388121031005\t3\n1994\tShawshank Redemption, The (1994)\t4.446990499637029\t1\n1994\tPulp Fiction (1994)\t4.174231169217055\t2\n1994\tThree Colors: Red (Trois couleurs: Rouge) (1994)\t4.089561500275786\t3\n1995\tUsual Suspects, The (1995)\t4.334372207803259\t1\n1995\tWallace & Gromit: A Close Shave (1995)\t4.167315497390872\t2\n1995\tPersonal Journey with Martin Scorsese Through American Movies, A (1995)\t4.1\t3\n1996\tWhen We Were Kings (1996)\t4.158415841584159\t1\n1996\tFargo (1996)\t4.112359031244223\t2\n1996\tWallace & Gromit: The Best of Aardman Animation (1996)\t4.109472524782769\t3\n1997\tLife Is Beautiful (La Vita è bella) (1997)\t4.175837188808107\t1\n1997\tPrincess Mononoke (Mononoke-hime) (1997)\t4.096298619824341\t2\n1997\tL.A. Confidential (1997)\t4.083376807273812\t3\n1998\tAmerican History X (1998)\t4.151207688017504\t1\n1998\tCelebration, The (Festen) (1998)\t4.12325479930192\t2\n1998\tCentral Station (Central do Brasil) (1998)\t4.102301255230126\t3\n1999\tFight Club (1999)\t4.227123123722136\t1\n1999\tMatrix, The (1999)\t4.187185880702848\t2\n1999\tAmerican Beauty (1999)\t4.155933936470536\t3\n2000\tO Auto da Compadecida (Dog's Will, A) (2000)\t4.269230769230769\t1\n2000\tMemento (2000)\t4.1785467923660615\t2\n2000\tYou Can Count on Me (2000)\t4.054770926627627\t3\n2001\tBand of Brothers (2001)\t4.263182346109176\t1\n2001\tSpirited Away (Sen to Chihiro no kamikakushi) (2001)\t4.203809594534383\t2\n2001\tAmelie (Fabuleux destin d'Amélie Poulain, Le) (2001)\t4.19707174832642\t3\n2002\tCity of God (Cidade de Deus) (2002)\t4.235410064157069\t1\n2002\tLord of the Rings: The Two Towers, The (2002)\t4.107520546734616\t2\n2002\tPianist, The (2002)\t4.053922967189729\t3\n2003\tLord of the Rings: The Return of the King, The (2003)\t4.14238211356367\t1\n2003\tFog of War: Eleven Lessons from the Life of Robert S. McNamara, The (2003)\t4.1035148706064115\t2\n2003\tOld Boy (2003)\t4.091026260673433\t3\n2004\tDeath on the Staircase (Soupçons) (2004)\t4.285714285714286\t1\n2004\tEternal Sunshine of the Spotless Mind (2004)\t4.105628131710809\t2\n2004\tHowl's Moving Castle (Hauru no ugoku shiro) (2004)\t4.066078116639915\t3\n2005\tBleak House (2005)\t4.111111111111111\t1\n2005\tHouse of Sand (Casa de Areia) (2005)\t4.027777777777778\t2\n2005\tOn Probation (Tiempo de Valientes) (2005)\t4.0\t3\n2006\tLives of Others, The (Das leben der Anderen) (2006)\t4.2347902097902095\t1\n2006\tDeparted, The (2006)\t4.109930812775176\t2\n2006\tPrestige, The (2006)\t4.042195403318839\t3\n2007\tThe War (2007)\t4.25\t1\n2007\tLouis C.K.: Shameless (2007)\t4.08361391694725\t2\n2007\tHeima (2007)\t4.037383177570093\t3\n2008\tDark Knight, The (2008)\t4.220129171151776\t1\n2008\tLouis C.K.: Chewed Up (2008)\t4.08117816091954\t2\n2008\tDr. Horrible's Sing-Along Blog (2008)\t4.068371943371943\t3\n2009\tSecret in Their Eyes, The (El secreto de sus ojos) (2009)\t4.0465994962216625\t1\n2009\tUp (2009)\t4.038266407599309\t2\n2009\tGifted Hands: The Ben Carson Story (2009)\t4.029411764705882\t3\n2010\tInception (2010)\t4.156172003137702\t1\n2010\tLouis C.K.: Hilarious (2010)\t4.071817192600653\t2\n2010\tSenna (2010)\t4.023643949930459\t3\n2011\tTT3D: Closer to the Edge (2011)\t4.233333333333333\t1\n2011\tFrozen Planet (2011)\t4.209677419354839\t2\n2011\tBlack Mirror (2011)\t4.18298969072165\t3\n2012\tHunt, The (Jagten) (2012)\t4.054936305732484\t1\n2012\tDjango Unchained (2012)\t4.0378927911275415\t2\n2012\tDark Knight Rises, The (2012)\t4.00020964360587\t3\n2013\tLouis C.K.: Oh My God (2013)\t4.040492957746479\t1\n2013\tTracks (2013)\t4.0\t2\n2013\tGideon's Army (2013)\t3.9583333333333335\t3\n2013\tTom at the Farm (Tom à la ferme) (2013)\t3.9583333333333335\t3\n2014\tZero Motivation (Efes beyahasei enosh) (2014)\t4.5\t1\n2014\tWhiplash (2014)\t4.074750830564784\t2\n2014\tInterstellar (2014)\t4.023864289821737\t3\n2015\tLouis C.K.: Live at The Comedy Store (2015)\t3.8\t1\n2015\tKingsman: The Secret Service (2015)\t3.6320754716981134\t2\n2015\tThe Second Best Exotic Marigold Hotel (2015)\t3.5714285714285716\t3\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672303295793_1014767841",
+      "id": "paragraph_1672303295793_1014767841",
+      "dateCreated": "2022-12-29T17:41:35+0900",
+      "dateStarted": "2022-12-29T17:45:15+0900",
+      "dateFinished": "2022-12-29T17:45:38+0900",
+      "status": "FINISHED",
+      "$$hashKey": "object:482"
+    },
+    {
+      "text": "%jdbc(hive)\nSELECT year, title, popularity, row_num FROM\n(SELECT year, title, count(distinct userID) as popularity, rank() over (partition by year order by count(distinct userID) desc) as row_num\nFROM movie_rating GROUP BY year, title) T\nWHERE row_num = 1 ORDER BY year, popularity desc;\n",
+      "user": "yea",
+      "dateUpdated": "2022-12-29T17:49:14+0900",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "INFO  : Compiling command(queryId=hive_20221229174914_c06f546c-1f9b-4519-b4b1-c65ac7d3ef89): \nSELECT year, title, popularity, row_num FROM\n(SELECT year, title, count(distinct userID) as popularity, rank() over (partition by year order by count(distinct userID) desc) as row_num\nFROM movie_rating GROUP BY year, title) T\nWHERE row_num = 1 ORDER BY year, popularity desc\nINFO  : Semantic Analysis Completed (retrial = false)\nINFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:year, type:int, comment:null), FieldSchema(name:title, type:string, comment:null), FieldSchema(name:popularity, type:bigint, comment:null), FieldSchema(name:row_num, type:int, comment:null)], properties:null)\nINFO  : Completed compiling command(queryId=hive_20221229174914_c06f546c-1f9b-4519-b4b1-c65ac7d3ef89); Time taken: 0.171 seconds\nINFO  : Executing command(queryId=hive_20221229174914_c06f546c-1f9b-4519-b4b1-c65ac7d3ef89): \nSELECT year, title, popularity, row_num FROM\n(SELECT year, title, count(distinct userID) as popularity, rank() over (partition by year order by count(distinct userID) desc) as row_num\nFROM movie_rating GROUP BY year, title) T\nWHERE row_num = 1 ORDER BY year, popularity desc\nINFO  : Query ID = hive_20221229174914_c06f546c-1f9b-4519-b4b1-c65ac7d3ef89\nINFO  : Total jobs = 1\nINFO  : Launching Job 1 out of 1\nINFO  : Starting task [Stage-1:MAPRED] in serial mode\nINFO  : Subscribed to counters: [] for queryId: hive_20221229174914_c06f546c-1f9b-4519-b4b1-c65ac7d3ef89\nINFO  : Session is already open\nINFO  : Dag name: SELECT year, title, popularity, row_n...desc (Stage-1)\nINFO  : Status: Running (Executing on YARN cluster with App id application_1672132606172_0012)\n\n\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2KMap 1            container        INITED     10          0        0       10       0       0  \nReducer 2        container        INITED     20          0        0       20       0       0  \nReducer 3        container        INITED     10          0        0       10       0       0  \nReducer 4        container        INITED      1          0        0        1       0       0  \n\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[31;1mVERTICES: 00/04  [>>--------------------------] 0%    ELAPSED TIME: 1.06 s     \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[10A\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2KMap 1            container        INITED     10          0        0       10       0       0  \nReducer 2        container        INITED     20          0        0       20       0       0  \nReducer 3        container        INITED     10          0        0       10       0       0  \nReducer 4        container        INITED      1          0        0        1       0       0  \n\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[31;1mVERTICES: 00/04  [>>--------------------------] 0%    ELAPSED TIME: 1.56 s     \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[10A\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2KMap 1            container       RUNNING     10          0        2        8       0       0  \nReducer 2        container        INITED     20          0        0       20       0       0  \nReducer 3        container        INITED     10          0        0       10       0       0  \nReducer 4        container        INITED      1          0        0        1       0       0  \n\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[31;1mVERTICES: 00/04  [>>--------------------------] 0%    ELAPSED TIME: 2.07 s     \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[10A\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2KMap 1            container       RUNNING     10          0       10        0       0       0  \nReducer 2        container        INITED     20          0        0       20       0       0  \nReducer 3        container        INITED     10          0        0       10       0       0  \nReducer 4        container        INITED      1          0        0        1       0       0  \n\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[31;1mVERTICES: 00/04  [>>--------------------------] 0%    ELAPSED TIME: 2.57 s     \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[10A\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2KMap 1            container       RUNNING     10          0       10        0       0       0  \nReducer 2        container        INITED     20          0        0       20       0       0  \nReducer 3        container        INITED     10          0        0       10       0       0  \nReducer 4        container        INITED      1          0        0        1       0       0  \n\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[31;1mVERTICES: 00/04  [>>--------------------------] 0%    ELAPSED TIME: 3.08 s     \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[10A\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2KMap 1            container       RUNNING     10          0       10        0       0       0  \nReducer 2        container        INITED     20          0        0       20       0       0  \nReducer 3        container        INITED     10          0        0       10       0       0  \nReducer 4        container        INITED      1          0        0        1       0       0  \n\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[31;1mVERTICES: 00/04  [>>--------------------------] 0%    ELAPSED TIME: 3.58 s     \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[10A\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2KMap 1            container       RUNNING     10          0       10        0       0       0  \nReducer 2        container        INITED     20          0        0       20       0       0  \nReducer 3        container        INITED     10          0        0       10       0       0  \nReducer 4        container        INITED      1          0        0        1       0       0  \n\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[31;1mVERTICES: 00/04  [>>--------------------------] 0%    ELAPSED TIME: 4.08 s     \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[10A\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2KMap 1            container       RUNNING     10          0       10        0       0       0  \nReducer 2        container        INITED     20          0        0       20       0       0  \nReducer 3        container        INITED     10          0        0       10       0       0  \nReducer 4        container        INITED      1          0        0        1       0       0  \n\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[31;1mVERTICES: 00/04  [>>--------------------------] 0%    ELAPSED TIME: 4.59 s     \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[10A\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2KMap 1            container       RUNNING     10          0       10        0       0       0  \nReducer 2        container        INITED     20          0        0       20       0       0  \nReducer 3        container        INITED     10          0        0       10       0       0  \nReducer 4        container        INITED      1          0        0        1       0       0  \n\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[31;1mVERTICES: 00/04  [>>--------------------------] 0%    ELAPSED TIME: 5.09 s     \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[10A\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2KMap 1            container       RUNNING     10          0       10        0       0       0  \nReducer 2        container        INITED     20          0        0       20       0       0  \nReducer 3        container        INITED     10          0        0       10       0       0  \nReducer 4        container        INITED      1          0        0        1       0       0  \n\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[31;1mVERTICES: 00/04  [>>--------------------------] 0%    ELAPSED TIME: 5.60 s     \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[10A\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2KMap 1            container       RUNNING     10          0       10        0       0       0  \nReducer 2        container        INITED     20          0        0       20       0       0  \nReducer 3        container        INITED     10          0        0       10       0       0  \nReducer 4        container        INITED      1          0        0        1       0       0  \n\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[31;1mVERTICES: 00/04  [>>--------------------------] 0%    ELAPSED TIME: 6.10 s     \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[10A\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2KMap 1            container       RUNNING     10          0       10        0       0       0  \nReducer 2        container        INITED     20          0        0       20       0       0  \nReducer 3        container        INITED     10          0        0       10       0       0  \nReducer 4        container        INITED      1          0        0        1       0       0  \n\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[31;1mVERTICES: 00/04  [>>--------------------------] 0%    ELAPSED TIME: 6.61 s     \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[10A\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2KMap 1            container       RUNNING     10          0       10        0       0       0  \nReducer 2        container        INITED     20          0        0       20       0       0  \nReducer 3        container        INITED     10          0        0       10       0       0  \nReducer 4        container        INITED      1          0        0        1       0       0  \n\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[31;1mVERTICES: 00/04  [>>--------------------------] 0%    ELAPSED TIME: 7.11 s     \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[10A\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2KMap 1            container       RUNNING     10          0       10        0       0       0  \nReducer 2        container        INITED     20          0        0       20       0       0  \nReducer 3        container        INITED     10          0        0       10       0       0  \nReducer 4        container        INITED      1          0        0        1       0       0  \n\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[31;1mVERTICES: 00/04  [>>--------------------------] 0%    ELAPSED TIME: 7.61 s     \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[10A\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2KMap 1            container       RUNNING     10          0       10        0       0       0  \nReducer 2        container        INITED     20          0        0       20       0       0  \nReducer 3        container        INITED     10          0        0       10       0       0  \nReducer 4        container        INITED      1          0        0        1       0       0  \n\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[31;1mVERTICES: 00/04  [>>--------------------------] 0%    ELAPSED TIME: 8.12 s     \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[10A\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2KMap 1            container       RUNNING     10          0       10        0       0       0  \nReducer 2        container        INITED     20          0        0       20       0       0  \nReducer 3        container        INITED     10          0        0       10       0       0  \nReducer 4        container        INITED      1          0        0        1       0       0  \n\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[31;1mVERTICES: 00/04  [>>--------------------------] 0%    ELAPSED TIME: 8.62 s     \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\nINFO  : Status: Killed\nERROR : Dag received [DAG_TERMINATE, DAG_KILL] in RUNNING state.\nERROR : Sending client kill from yea (auth:SIMPLE) at 172.16.17.8 to dag dag_1672132606172_0012_3\nERROR : Vertex killed, vertexName=Reducer 4, vertexId=vertex_1672132606172_0012_3_03, diagnostics=[Vertex received Kill while in RUNNING state., Vertex did not succeed due to DAG_TERMINATED, failedTasks:0 killedTasks:1, Vertex vertex_1672132606172_0012_3_03 [Reducer 4] killed/failed due to:DAG_TERMINATED]\nERROR : Vertex killed, vertexName=Reducer 3, vertexId=vertex_1672132606172_0012_3_02, diagnostics=[Vertex received Kill while in RUNNING state., Vertex did not succeed due to DAG_TERMINATED, failedTasks:0 killedTasks:10, Vertex vertex_1672132606172_0012_3_02 [Reducer 3] killed/failed due to:DAG_TERMINATED]\nERROR : Vertex killed, vertexName=Reducer 2, vertexId=vertex_1672132606172_0012_3_01, diagnostics=[Vertex received Kill while in RUNNING state., Vertex did not succeed due to DAG_TERMINATED, failedTasks:0 killedTasks:20, Vertex vertex_1672132606172_0012_3_01 [Reducer 2] killed/failed due to:DAG_TERMINATED]\nERROR : Vertex killed, vertexName=Map 1, vertexId=vertex_1672132606172_0012_3_00, diagnostics=[Vertex received Kill while in RUNNING state., Vertex did not succeed due to DAG_TERMINATED, failedTasks:0 killedTasks:10, Vertex vertex_1672132606172_0012_3_00 [Map 1] killed/failed due to:DAG_TERMINATED]\nERROR : DAG did not succeed due to DAG_KILL. failedVertices:0 killedVertices:4\n\u001b[10A\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2KMap 1            container        KILLED     10          0        0       10       0       0  \nReducer 2        container        KILLED     20          0        0       20       0       0  \nReducer 3        container        KILLED     10          0        0       10       0       0  \nReducer 4        container        KILLED      1          0        0        1       0       0  \n\u001b[2K----------------------------------------------------------------------------------------------\n\u001b[2K\u001b[31;1mVERTICES: 00/04  [>>--------------------------] 0%    ELAPSED TIME: 9.27 s     \n\u001b[22;0m\u001b[2K----------------------------------------------------------------------------------------------\n"
+          },
+          {
+            "type": "TEXT",
+            "data": "Query was cancelled"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672303515285_40703491",
+      "id": "paragraph_1672303515285_40703491",
+      "dateCreated": "2022-12-29T17:45:15+0900",
+      "dateStarted": "2022-12-29T17:49:14+0900",
+      "dateFinished": "2022-12-29T17:49:24+0900",
+      "status": "ABORT",
+      "$$hashKey": "object:483"
+    },
+    {
+      "text": "%spark\nspark\n",
+      "user": "yea",
+      "dateUpdated": "2022-12-30T13:40:51+0900",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672303639383_1738997921",
+      "id": "paragraph_1672303639383_1738997921",
+      "dateCreated": "2022-12-29T17:47:19+0900",
+      "status": "FINISHED",
+      "$$hashKey": "object:484",
+      "dateFinished": "2022-12-30T13:40:51+0900",
+      "dateStarted": "2022-12-30T13:40:51+0900",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mres26\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.SparkSession\u001b[0m = org.apache.spark.sql.SparkSession@28936f4e\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%spark\n\n// ETL Sample Code\n\nimport spark.implicits._\nimport org.apache.spark.sql.types.StructType\nimport org.apache.spark.sql.catalyst.ScalaReflection\n\ncase class Movie(movieId: Int, title: String, genres: String)\nval movies_schema = ScalaReflection.schemaFor[Movie].dataType.asInstanceOf[StructType]  // create schema from case class\n\n// Read Source Data(Extract)\nval movie_df = spark.read\n        .option(\"header\", \"true\")\n        .schema(movies_schema)\n        .csv(\"hdfs://catalog-test/user/root/movie.csv\")\n        \nmovie_df.show()\n        \n// Transformation\nval transformedDf = movie_df\n    .select($\"movieId\", $\"title\", explode(split($\"genres\", \"\\\\|\")).as(\"genre\"))\n    .withColumn(\"releasedYear\", regexp_extract($\"title\", \"\\\\((\\\\d{4})\\\\)\", 1))\n    .withColumn(\"releasedYear\", $\"releasedYear\".cast(IntegerType))\n    \ntransformedDf.show()\n\n// Write transformed data to target location(Load)\ntransformedDf.write.format(\"csv\")\n    .option(\"header\", \"true\")\n    .save(\"hdfs://catalog-test/user/root/movie_transformed.csv\")",
+      "user": "yea",
+      "dateUpdated": "2022-12-30T13:46:54+0900",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://e-001-catalog-test-25rk-hd:4041/jobs/job?id=20",
+              "$$hashKey": "object:6477"
+            },
+            {
+              "jobUrl": "http://e-001-catalog-test-25rk-hd:4041/jobs/job?id=21",
+              "$$hashKey": "object:6478"
+            },
+            {
+              "jobUrl": "http://e-001-catalog-test-25rk-hd:4041/jobs/job?id=22",
+              "$$hashKey": "object:6479"
+            }
+          ],
+          "interpreterSettingId": "spark2"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672375251713_2097280215",
+      "id": "paragraph_1672375251713_2097280215",
+      "dateCreated": "2022-12-30T13:40:51+0900",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:6103",
+      "dateFinished": "2022-12-30T13:46:56+0900",
+      "dateStarted": "2022-12-30T13:46:54+0900",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+--------------------+--------------------+\n|movieId|               title|              genres|\n+-------+--------------------+--------------------+\n|      1|    Toy Story (1995)|Adventure|Animati...|\n|      2|      Jumanji (1995)|Adventure|Childre...|\n|      3|Grumpier Old Men ...|      Comedy|Romance|\n|      4|Waiting to Exhale...|Comedy|Drama|Romance|\n|      5|Father of the Bri...|              Comedy|\n|      6|         Heat (1995)|Action|Crime|Thri...|\n|      7|      Sabrina (1995)|      Comedy|Romance|\n|      8| Tom and Huck (1995)|  Adventure|Children|\n|      9| Sudden Death (1995)|              Action|\n|     10|    GoldenEye (1995)|Action|Adventure|...|\n|     11|American Presiden...|Comedy|Drama|Romance|\n|     12|Dracula: Dead and...|       Comedy|Horror|\n|     13|        Balto (1995)|Adventure|Animati...|\n|     14|        Nixon (1995)|               Drama|\n|     15|Cutthroat Island ...|Action|Adventure|...|\n|     16|       Casino (1995)|         Crime|Drama|\n|     17|Sense and Sensibi...|       Drama|Romance|\n|     18|   Four Rooms (1995)|              Comedy|\n|     19|Ace Ventura: When...|              Comedy|\n|     20|  Money Train (1995)|Action|Comedy|Cri...|\n+-------+--------------------+--------------------+\nonly showing top 20 rows\n\n+-------+--------------------+---------+------------+\n|movieId|               title|    genre|releasedYear|\n+-------+--------------------+---------+------------+\n|      1|    Toy Story (1995)|Adventure|        1995|\n|      1|    Toy Story (1995)|Animation|        1995|\n|      1|    Toy Story (1995)| Children|        1995|\n|      1|    Toy Story (1995)|   Comedy|        1995|\n|      1|    Toy Story (1995)|  Fantasy|        1995|\n|      2|      Jumanji (1995)|Adventure|        1995|\n|      2|      Jumanji (1995)| Children|        1995|\n|      2|      Jumanji (1995)|  Fantasy|        1995|\n|      3|Grumpier Old Men ...|   Comedy|        1995|\n|      3|Grumpier Old Men ...|  Romance|        1995|\n|      4|Waiting to Exhale...|   Comedy|        1995|\n|      4|Waiting to Exhale...|    Drama|        1995|\n|      4|Waiting to Exhale...|  Romance|        1995|\n|      5|Father of the Bri...|   Comedy|        1995|\n|      6|         Heat (1995)|   Action|        1995|\n|      6|         Heat (1995)|    Crime|        1995|\n|      6|         Heat (1995)| Thriller|        1995|\n|      7|      Sabrina (1995)|   Comedy|        1995|\n|      7|      Sabrina (1995)|  Romance|        1995|\n|      8| Tom and Huck (1995)|Adventure|        1995|\n+-------+--------------------+---------+------------+\nonly showing top 20 rows\n\nimport spark.implicits._\nimport org.apache.spark.sql.types.StructType\nimport org.apache.spark.sql.catalyst.ScalaReflection\ndefined class Movie\n\u001b[1m\u001b[34mmovies_schema\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.types.StructType\u001b[0m = StructType(StructField(movieId,IntegerType,false), StructField(title,StringType,true), StructField(genres,StringType,true))\n\u001b[1m\u001b[34mmovie_df\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [movieId: int, title: string ... 1 more field]\n\u001b[1m\u001b[34mtransformedDf\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [movieId: int, title: string ... 2 more fields]\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%spark\nval read_transformed_df = spark.read\n    .format(\"csv\")\n    .option(\"header\", \"true\")\n    .option(\"inferSchema\", \"true\")\n    .load(\"hdfs://catalog-test/user/root/movie_transformed.csv\")\n    \nread_transformed_df.show()",
+      "user": "yea",
+      "dateUpdated": "2022-12-30T13:48:36+0900",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://e-001-catalog-test-25rk-hd:4041/jobs/job?id=23",
+              "$$hashKey": "object:6617"
+            },
+            {
+              "jobUrl": "http://e-001-catalog-test-25rk-hd:4041/jobs/job?id=24",
+              "$$hashKey": "object:6618"
+            },
+            {
+              "jobUrl": "http://e-001-catalog-test-25rk-hd:4041/jobs/job?id=25",
+              "$$hashKey": "object:6619"
+            }
+          ],
+          "interpreterSettingId": "spark2"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672375303320_1548819754",
+      "id": "paragraph_1672375303320_1548819754",
+      "dateCreated": "2022-12-30T13:41:43+0900",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:6191",
+      "dateFinished": "2022-12-30T13:48:38+0900",
+      "dateStarted": "2022-12-30T13:48:36+0900",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+--------------------+---------+------------+\n|movieId|               title|    genre|releasedYear|\n+-------+--------------------+---------+------------+\n|      1|    Toy Story (1995)|Adventure|        1995|\n|      1|    Toy Story (1995)|Animation|        1995|\n|      1|    Toy Story (1995)| Children|        1995|\n|      1|    Toy Story (1995)|   Comedy|        1995|\n|      1|    Toy Story (1995)|  Fantasy|        1995|\n|      2|      Jumanji (1995)|Adventure|        1995|\n|      2|      Jumanji (1995)| Children|        1995|\n|      2|      Jumanji (1995)|  Fantasy|        1995|\n|      3|Grumpier Old Men ...|   Comedy|        1995|\n|      3|Grumpier Old Men ...|  Romance|        1995|\n|      4|Waiting to Exhale...|   Comedy|        1995|\n|      4|Waiting to Exhale...|    Drama|        1995|\n|      4|Waiting to Exhale...|  Romance|        1995|\n|      5|Father of the Bri...|   Comedy|        1995|\n|      6|         Heat (1995)|   Action|        1995|\n|      6|         Heat (1995)|    Crime|        1995|\n|      6|         Heat (1995)| Thriller|        1995|\n|      7|      Sabrina (1995)|   Comedy|        1995|\n|      7|      Sabrina (1995)|  Romance|        1995|\n|      8| Tom and Huck (1995)|Adventure|        1995|\n+-------+--------------------+---------+------------+\nonly showing top 20 rows\n\n\u001b[1m\u001b[34mread_transformed_df\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [movieId: int, title: string ... 2 more fields]\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%spark\n\n// ETL Sample Code using Hive\n\n// Read in the source data from a Hive table\n// Spark 에서 Hive Table 읽을 경우, first column 이 포함됨(skip.header.line.count 을 인식하지 못함), 따라서 따로 전처리 필요\n//val movie_df_temp = spark.read.option(\"header\", \"true\").option(\"inferSchema\", \"true\").format(\"csv\").load(\"hdfs://catalog-test/user/root/movie.csv\") header 무시해서 읽음\nval movie_df_temp = spark.table(\"movies\") // hive 에서 바로 읽음\n\n//movie_df_temp.show()\n\n// Filter out first row\nval movie_df = movie_df_temp.filter(movie_df_temp(\"movieid\") =!= 0)\nmovie_df.show()\n\n\n// Transformation\nval transformedDF = movie_df\n    .select($\"movieId\", $\"title\", explode(split($\"genres\", \"\\\\|\")).as(\"genre\"))\n    .withColumn(\"releasedYear\", regexp_extract($\"title\", \"\\\\((\\\\d{4})\\\\)\", 1))\n    .withColumn(\"releasedYear\", $\"releasedYear\".cast(IntegerType))\ntransformedDF.show()\n\n// Write the transformed data to a new Hive table\ntransformedDF.write\n    .format(\"hive\")\n    .mode(\"overwrite\")\n    .option(\"path\", \"hdfs://catalog-test/user/root/transformed_movie.csv\")\n    .saveAsTable(\"transformed_movie\")",
+      "user": "yea",
+      "dateUpdated": "2022-12-30T17:05:10+0900",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://e-001-catalog-test-25rk-hd:4041/jobs/job?id=108",
+              "$$hashKey": "object:11894"
+            },
+            {
+              "jobUrl": "http://e-001-catalog-test-25rk-hd:4041/jobs/job?id=109",
+              "$$hashKey": "object:11895"
+            },
+            {
+              "jobUrl": "http://e-001-catalog-test-25rk-hd:4041/jobs/job?id=110",
+              "$$hashKey": "object:11896"
+            }
+          ],
+          "interpreterSettingId": "spark2"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672375716416_1072637606",
+      "id": "paragraph_1672375716416_1072637606",
+      "dateCreated": "2022-12-30T13:48:36+0900",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:6492",
+      "dateFinished": "2022-12-30T17:05:12+0900",
+      "dateStarted": "2022-12-30T17:05:10+0900",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+--------------------+--------------------+\n|movieid|               title|              genres|\n+-------+--------------------+--------------------+\n|      1|    Toy Story (1995)|Adventure|Animati...|\n|      2|      Jumanji (1995)|Adventure|Childre...|\n|      3|Grumpier Old Men ...|      Comedy|Romance|\n|      4|Waiting to Exhale...|Comedy|Drama|Romance|\n|      5|Father of the Bri...|              Comedy|\n|      6|         Heat (1995)|Action|Crime|Thri...|\n|      7|      Sabrina (1995)|      Comedy|Romance|\n|      8| Tom and Huck (1995)|  Adventure|Children|\n|      9| Sudden Death (1995)|              Action|\n|     10|    GoldenEye (1995)|Action|Adventure|...|\n|     11| \"American President|         The (1995)\"|\n|     12|Dracula: Dead and...|       Comedy|Horror|\n|     13|        Balto (1995)|Adventure|Animati...|\n|     14|        Nixon (1995)|               Drama|\n|     15|Cutthroat Island ...|Action|Adventure|...|\n|     16|       Casino (1995)|         Crime|Drama|\n|     17|Sense and Sensibi...|       Drama|Romance|\n|     18|   Four Rooms (1995)|              Comedy|\n|     19|Ace Ventura: When...|              Comedy|\n|     20|  Money Train (1995)|Action|Comedy|Cri...|\n+-------+--------------------+--------------------+\nonly showing top 20 rows\n\n+-------+--------------------+---------+------------+\n|movieId|               title|    genre|releasedYear|\n+-------+--------------------+---------+------------+\n|      1|    Toy Story (1995)|Adventure|        1995|\n|      1|    Toy Story (1995)|Animation|        1995|\n|      1|    Toy Story (1995)| Children|        1995|\n|      1|    Toy Story (1995)|   Comedy|        1995|\n|      1|    Toy Story (1995)|  Fantasy|        1995|\n|      2|      Jumanji (1995)|Adventure|        1995|\n|      2|      Jumanji (1995)| Children|        1995|\n|      2|      Jumanji (1995)|  Fantasy|        1995|\n|      3|Grumpier Old Men ...|   Comedy|        1995|\n|      3|Grumpier Old Men ...|  Romance|        1995|\n|      4|Waiting to Exhale...|   Comedy|        1995|\n|      4|Waiting to Exhale...|    Drama|        1995|\n|      4|Waiting to Exhale...|  Romance|        1995|\n|      5|Father of the Bri...|   Comedy|        1995|\n|      6|         Heat (1995)|   Action|        1995|\n|      6|         Heat (1995)|    Crime|        1995|\n|      6|         Heat (1995)| Thriller|        1995|\n|      7|      Sabrina (1995)|   Comedy|        1995|\n|      7|      Sabrina (1995)|  Romance|        1995|\n|      8| Tom and Huck (1995)|Adventure|        1995|\n+-------+--------------------+---------+------------+\nonly showing top 20 rows\n\n\u001b[1m\u001b[34mmovie_df_temp\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [movieid: bigint, title: string ... 1 more field]\n\u001b[1m\u001b[34mmovie_df\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.Dataset[org.apache.spark.sql.Row]\u001b[0m = [movieid: bigint, title: string ... 1 more field]\n\u001b[1m\u001b[34mtransformedDF\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [movieId: bigint, title: string ... 2 more fields]\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%spark\n",
+      "user": "yea",
+      "dateUpdated": "2022-12-30T14:01:29+0900",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1672376489609_1613886265",
+      "id": "paragraph_1672376489609_1613886265",
+      "dateCreated": "2022-12-30T14:01:29+0900",
+      "status": "READY",
+      "focus": true,
+      "$$hashKey": "object:6632"
+    }
+  ],
+  "name": "Spark_Sample",
+  "id": "2HR99JFFT",
+  "defaultInterpreterGroup": "spark2",
+  "version": "0.9.0",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {},
+  "path": "/Spark_Sample"
+}
