@@ -20,10 +20,19 @@
  - 메모리 작업하기 때문에 기존 DISK 접근 방식보다 훨씬 빠름
  - Lazy Evaluation -> 실제 action이 일어날 때만 Spark Job 할당하여 작업됨, action이 아닌 transformed 등의 작업은 Spark Job 으로 실행되지 않음
  - key word: 분산, RDD, Data Frame
+```
+spark.read => used to read a table stored in the Hive metastore
+spark.table => used to read data from a variety of sources, such as files, databases, and cloud storage. 
+
+```
 
 ## Livy
 
  - Spark 를 Rest API 로 사용가능
+ - Spark Job Server 는 Spark Job Submit 에 특화되어 있는 반면, Livy 는 좀 더 interactive 하게 작동한다.
+ ```
+ Livy is a good choice if you want to enable interactive use of Spark through a REST API, while Spark Job Server is a good choice if you want to deploy and manage Spark applications on a cluster.
+ ```
 
 ## Presto
 
