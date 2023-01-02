@@ -45,6 +45,7 @@ spark.table => used to read data from a variety of sources, such as files, datab
  - Presto 에서는 Location이 S3 File인 경우(Not Directory) Select Query 가 안되나?
    - Table 생성 시 `External Location must be a directory` 에러 발생
    - Select Query 시 0 row 조회
+ - AWS Athena
 
 ## Sqoop
 
