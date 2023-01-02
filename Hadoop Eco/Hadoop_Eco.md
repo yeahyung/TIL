@@ -23,7 +23,6 @@
 ```
 spark.read => used to read a table stored in the Hive metastore
 spark.table => used to read data from a variety of sources, such as files, databases, and cloud storage. 
-
 ```
 
 ## Livy
@@ -43,3 +42,11 @@ spark.table => used to read data from a variety of sources, such as files, datab
    - 인터렉티브 쿼리 용도
    - Hive Connector 사용 가능, Hive Connector 사용해도 HiveQL 이나 Hive 의 쿼리 실행 엔진(MapReduce) 를 사용하지 않음
  - Coordinator(Client 요청, SQL 구문 파싱, 쿼리 플래닝, 쿼리 실행할 Worker 노드 조정), Worker(테스크 수행, 데이터 처리 & 테스트 결과 Client 전달)
+ - Presto 에서는 Location이 S3 File인 경우(Not Directory) Select Query 가 안되나?
+   - Table 생성 시 `External Location must be a directory` 에러 발생
+   - Select Query 시 0 row 조회
+
+## Sqoop
+
+ - SQL to Hadoop
+ - Hadoop 과 관계형 데이터베이스 간에 데이터를 전송할 수 있도록 설계됨
