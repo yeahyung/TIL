@@ -22,5 +22,5 @@ curl -k -u 'elastic:XJumOFSvud+qtlNMqnrU' https://localhost:9200
 
 ```
 # Set Elasticsearch Configuration
-/etc/elasticsearch/elasticsearch
+/etc/elasticsearch/elasticsearch.yml
 ```
