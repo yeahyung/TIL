@@ -51,3 +51,9 @@ spark.table => used to read data from a variety of sources, such as files, datab
 
  - SQL to Hadoop
  - Hadoop 과 관계형 데이터베이스 간에 데이터를 전송할 수 있도록 설계됨
+ - `sqoop import --connect jdbc:mysql://localhost:3306/hive --username yeaa -P --table TBLS --hive-import --create-hive-table --hive-table default.sqoop_test -m 1`
+   - mysql 의 hive database 의 TBLS table 을 hive 의 default database 의 sqoop_test 로 import 한다.
+
+## Impala
+
+ - Apache Impala is the open source, native analytic database for Apache Hadoop.
