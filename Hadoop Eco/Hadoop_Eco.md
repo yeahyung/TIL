@@ -42,10 +42,15 @@ spark.table => used to read data from a variety of sources, such as files, datab
    - 인터렉티브 쿼리 용도
    - Hive Connector 사용 가능, Hive Connector 사용해도 HiveQL 이나 Hive 의 쿼리 실행 엔진(MapReduce) 를 사용하지 않음
  - Coordinator(Client 요청, SQL 구문 파싱, 쿼리 플래닝, 쿼리 실행할 Worker 노드 조정), Worker(테스크 수행, 데이터 처리 & 테스트 결과 Client 전달)
- - Presto 에서는 Location이 S3 File인 경우(Not Directory) Select Query 가 안되나?
+ - Presto 에서는 Location이 S3 File인 경우(Not Directory) 에 대하여 지원하지 않음
    - Table 생성 시 `External Location must be a directory` 에러 발생
-   - Select Query 시 0 row 조회
- - AWS Athena
+   - 이미 만들어진 Table인 경우, Select Query 시 0 row 조회
+ - AWS Athena 에서 사용하는 것으로 보임
+
+## Trino
+
+ - 분산 쿼리 엔진
+ - Presto 초기 멤버들이 페이스북에서 나와 개발한 것
 
 ## Sqoop
 
