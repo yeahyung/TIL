@@ -8,14 +8,14 @@
 public class HibernateInterceptor extends EmptyInterceptor {
     @Override
     public String onPrepareStatement(String sql) {
-        sql = sql.replaceAll("##schema##", schema);
+        sql = sql.replaceAll("##catalog##", ${catalog});
         return super.onPrepareStatement(sql);
     }
 }
 ```
 ```
 @Entity
-@Table(name = "MY_TAABLE", name = "##schema##")
+@Table(name = "MY_TABLE", catalog = "##catalog##") // rdbms 에 따라 catalog 혹은 schema
 public class tableEntity
 ...
 ```
