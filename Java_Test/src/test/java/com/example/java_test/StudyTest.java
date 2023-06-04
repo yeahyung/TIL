@@ -1,6 +1,7 @@
 package com.example.java_test;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assumptions.*;
 
 import java.time.Duration;
 
@@ -11,6 +12,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
+import org.junit.jupiter.api.condition.EnabledOnJre;
+import org.junit.jupiter.api.condition.EnabledOnOs;
+import org.junit.jupiter.api.condition.JRE;
+import org.junit.jupiter.api.condition.OS;
 
 class StudyTest {
 
@@ -49,6 +55,47 @@ class StudyTest {
 		}); // 별도의 Thread로 실행되기 때문에 ThreadLocal을 사용하는 테스트 코드는 예상치 못한 에러가 발생할 수 있음
 			// ex) Transaction rollback이 안될 수 있음
 	}
+
+	@Test
+	@DisplayName("조건에 따라 테스트 실행하기")
+	void create_new_study1() {
+		String test_env = System.getenv("TEST_ENV");
+
+		// assumeTrue가 통과해야 그 아래 테스트 코드가 실행되며 통과하지 않으면 Test는 무시됨(테스트 실패로 처리되지 않음)
+		// 특정 환경(dev, beta 등)에서만 실행해야 하는 테스트 코드가 있다면 assumeTrue를 활용하라.
+		assumeTrue("LOCAL".equals(test_env));
+
+		// 혹은 아래와 같이 실행 가능
+		assumingThat("LOCAL".equals(test_env), () -> {
+			System.out.println("local");
+		});
+
+		assumingThat("DEV".equals(test_env), () -> {
+			System.out.println("dev");
+		});
+	}
+
+	@Test
+	@DisplayName("환경 변수에 따라 테스트 실행하기")
+	@EnabledIfEnvironmentVariable(named = "TEST_ENV", matches = "LOCAL")
+	void create_new_study2() {
+
+	}
+
+	@Test
+	@DisplayName("OS 환경에 따라 테스트 실행하기")
+	@EnabledOnOs({OS.MAC, OS.LINUX})
+	void create_new_study3() {
+
+	}
+
+	@Test
+	@DisplayName("JAVA 환경에 따라 테스트 실행하기")
+	@EnabledOnJre({JRE.JAVA_8, JRE.JAVA_11})
+	void create_new_study4() {
+
+	}
+
 
 	@Test
 	@Disabled
