@@ -1,0 +1,17 @@
+## JPA Data Type
+ - Entity Type
+   - @Entity
+ - Value Type(값 타입)
+   - 기본값 타입
+     - 자바 기본 타입(int, double)
+     - 래퍼 클래스(Integer, Long)
+     - String
+   - Embedded Type(복합 값 타입)
+     - 새로운 값 타입을 직접 정의할 수 있음
+     - 주로 기본 값 타입을 모아서 만들어 복합 값 타입이라함
+     - 재사용성, 높은 응집도 제공
+     - 여러 엔티티에서 객체를 공유하면 위험함, 인스턴스 복사해서 사용해라!
+       - 한계: 참조 값을 직접 대입하는 것을 막을 수 없음, 객체의 공유 참조를 피할 수 없음 -> 불변 객체를 사용해라
+   - Collection Value Type
+    - 값 타입을 하나 이상 저장할 때 사용(Set<String>, List<Address> 등)
+    - 컬렉션을 같은 테이블에 저장할 수 없기 때문에 별도 테이블 필요

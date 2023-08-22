@@ -19,6 +19,7 @@
      - B 가 name이 "Toto"인 사용자 다시 조회 => 결과 있음
      - => 하나의 트랜잭션 내에서 같은 SELECT 쿼리를 실행했을 때는 항상 같은 결과를 가져와야 한다는 `REPEATABLE READ` 정합성에 어긋남
    - 하나의 트랜잭션에서 계좌 조회, 다른 트랜잭션에서 입금/출금 진행할 때, 계좌 조회 트랜잭션에서 계좌를 조회할 때 마다 다른 결과를 가져올 수 있음
+   - DB Isolation Level이 `READ COMMITTED` 이여도 JPA에서는 1차 캐시 활용으로 인하여 `REPEATABLE READ` 가 발생하지 않는다.
 
 ### REPEATABLE READ
  - MySQL의 InnoDB 스토리지 엔진에서 기본으로 사용되는 격리 수준
